@@ -1,0 +1,97 @@
+title: FleetTurbo - Final Mile Delivery Solutions
+description: Fueled by Foresight, Turbocharged by Technology! Get fast delivery of anything, anywhere in the US with the best technology, drivers, and customer experience in the industry.
+
+hero:
+  title: Final Mile Delivery Solutions
+  description: Get fast delivery of anything, anywhere in the US with the best technology, drivers, and customer experience in the industry.
+  headline:
+    label: Fueled by Foresight, Turbocharged by Technology
+  links:
+    - label: Track your package
+      icon: i-heroicons-rocket-launch
+      to: '#track'
+      size: lg
+
+features:
+  headline: Your business partner in success!
+  title: We're not just a delivery company, but a last mile solutions provider
+  description: Trust Fleet Turbo for fast, cost-effective delivery across US. We offer delivery solutions for businesses of all sizes and industries.
+  items:
+    - title: Cost saving solutions
+      description: Affordable, stable and simple pricing without any hidden costs
+      icon: i-heroicons-banknotes
+    - title: Speed solutions
+      description: Next day for local delivery, 2-5 day shipping period for nationwide delivery
+      icon: i-heroicons-bolt
+    - title: On time solutions
+      description: 99.8% On-Time Delivery Rate
+      icon: i-heroicons-clock
+    - title: 3 attempts solutions
+      description: Our standard service includes one initial delivery attempt and two subsequent redelivery attempts
+      icon: i-heroicons-arrow-path
+    - title: After service solutions
+      description: In house customer service teams
+      icon: i-heroicons-user-group
+    - title: E-commerce solutions
+      description: Easy integrations and platform access. In house technical support team
+      icon: i-heroicons-shopping-cart
+
+services:
+  headline: The right solutions for ALL!
+  title: From Startup To Enterprise
+  description: We offer delivery solutions for businesses of all sizes and industries.
+  plans:
+    - title: Local retail business
+      icon: i-heroicons-building-storefront
+    - title: E-commerce
+      icon: i-heroicons-shopping-bag
+    - title: Wholesale business
+      icon: i-heroicons-truck
+    - title: Government & Organization
+      icon: i-heroicons-building-office-2
+    - title: 3PL & Logistics
+      icon: i-heroicons-cube
+
+testimonials:
+  headline: What our customers say
+  title: Trusted by businesses across the US
+  description: Hear from our satisfied customers about their experience with FleetTurbo.
+  items:
+    - quote: I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions.
+      author:
+        name: Online Business Owner
+        description: E-commerce Entrepreneur
+    - quote: My store is located in the neighbor street of Fleet Turbo in CA. They pick up the parcels daily from my store, they were very patient to get to know my business and my needs, and they were very open to discussion.
+      author:
+        name: Local Store Owner
+        description: Retail Business
+    - quote: We tasked Fleet Turbo to deliver our parcels to our customers. They are well organized, and even though we were on a tight schedule, needing rush delivery, they executed everything on time and on budget.
+      author:
+        name: Corporate Client
+        description: Large Enterprise
+
+cta:
+  title: Get started with FleetTurbo today
+  description: Experience the best in final mile delivery solutions for your business.
+  links:
+    - label: Contact Us
+      size: xl
+      to: 'mailto:info@fleetturbo.com'
+
+faq:
+  title: Frequently asked questions
+  description: Find answers to common questions about our services and solutions.
+  items:
+    - label: What areas do you serve?
+      content: We provide delivery services across the entire United States.
+    - label: How fast is your delivery?
+      content: We offer next day delivery for local shipments and 2-5 day shipping for nationwide delivery.
+    - label: Do you offer insurance?
+      content: Yes, all shipments are covered by our standard insurance policy up to $100.
+    - label: What additional services do you offer?
+      content: Besides delivery, we also offer Ocean Freight, Cross border services, and 3PL solutions.
+
+contact:
+  address: 2023 S 8TH ST ALHAMBRA, CA 91803
+  email: info@fleetturbo.com
+  phone: 1 6264762304
