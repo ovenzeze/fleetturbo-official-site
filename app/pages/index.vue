@@ -99,22 +99,6 @@ const customers = {
       :ui="{ container: 'mt-0', title: 'text-3xl leading-relaxed' }"
     >
       <template #headline>
-        <!-- <UButton
-          color="gray"
-          to="https://volta.net/changelog"
-          :label=" page.hero.headline"
-          trailing-icon="i-heroicons-arrow-right"
-          size="xs"
-          class="rounded-full"
-        />
-        <UBadge
-          v-if="page.hero.headline"
-          variant="subtle"
-          size="lg"
-          class="relative rounded-full font-semibold"
-        >
-          {{ page.hero.headline }}
-        </UBadge> -->
         <p class="bg-gradient-to-r from-gray-300 via-stone-400 to-fuchsia-800 bg-clip-text text-transparent leading-8 font-bold text-center md:text-2xl">
           {{ page.hero.title }}
         </p>
@@ -193,11 +177,7 @@ const customers = {
       </UPageColumns>
     </ULandingSection>
 
-    <ULandingSection class="">
-      <!-- <ULandingCTA
-        v-bind="page.cta"
-        :card="false"
-      /> -->
+    <ULandingSection>
       <div class="w-full sm:px-6 lg:px-8 mt-20 ">
         <div
           class="relative isolate overflow-hidden px-30 py-20 text-center "
