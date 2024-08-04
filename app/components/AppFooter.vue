@@ -21,7 +21,7 @@ const links = [
 <template>
   <UFooter>
     <template #top>
-      <UPageGrid :ui="{ wrapper: 'grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8' }">
+      <UPageGrid :ui="{ wrapper: 'grid grid-cols-2 xl:grid-cols-4 gap-8' }">
         <UPageCard
           v-for="(module, index) in links"
           :key="index"

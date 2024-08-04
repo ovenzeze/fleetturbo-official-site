@@ -27,7 +27,7 @@ export default <Partial<Config>>{
         }
       },
       animation: {
-        typing: 'typing 2s steps(20) infinite alternate, blink .7s infinite'
+        typing: 'typing 5s steps(50) infinite alternate, blink .7s infinite'
       }
     }
   }

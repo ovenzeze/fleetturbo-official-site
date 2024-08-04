@@ -10,90 +10,13 @@ useSeoMeta({
   ogDescription: page.value.description
 })
 
-const links = [
-  {
-    label: 'Community',
-    children: [
-      {
-        label: 'Nuxters',
-        to: 'https://nuxters.nuxt.com',
-        target: '_blank'
-      },
-      {
-        label: 'Video Courses',
-        to: 'https://masteringnuxt.com/nuxt3?ref=nuxt',
-        target: '_blank'
-      },
-      {
-        label: 'Nuxt on GitHub',
-        to: 'https://github.com/nuxt',
-        target: '_blank'
-      }
-    ]
-  },
-  {
-    label: 'Solutions',
-    children: [
-      {
-        label: 'Nuxt Content',
-        to: 'https://content.nuxt.com/',
-        target: '_blank'
-      },
-      {
-        label: 'Nuxt DevTools',
-        to: 'https://devtools.nuxt.com/',
-        target: '_blank'
-      },
-      {
-        label: 'Nuxt Image',
-        to: 'https://image.nuxt.com/',
-        target: '_blank'
-      },
-      {
-        label: 'Nuxt UI',
-        to: 'https://ui.nuxt.com/',
-        target: '_blank'
-      }
-    ]
-  },
-  {
-    label: 'Contact Us',
-    children: [
-      {
-        label: 'General Inquiries',
-        to: 'mailto:info@example.com'
-      },
-      {
-        label: 'Business Cooperation',
-        to: 'mailto:business@example.com'
-      },
-      {
-        label: 'Support',
-        to: 'mailto:support@example.com'
-      },
-      {
-        label: 'Feedback & Suggestions',
-        to: 'mailto:feedback@example.com'
-      }
-    ]
-  }
-]
-
-const customers = {
-  title: 'We work with customers brands and startups',
-  items: [
-    'images/brands-jt.webp',
-    'images/brands-piggy.png',
-    'images/brands-speedx.png',
-    'images/brands-uniuni.svg',
-    'images/logo.png'
-  ]
-}
 </script>
 
 <template>
   <div>
-    <ULandingHero
+    <LandingPage />
+
+    <!-- <ULandingHero
       :description="page.hero.description"
       :links="page.hero.links"
       :ui="{ container: 'mt-0', title: 'text-3xl leading-relaxed' }"
@@ -106,23 +29,7 @@ const customers = {
           {{ page.hero.headline.label }}
         </p>
       </template>
-
-      <!-- <ImagePlaceholder /> -->
-
-      <ULandingLogos
-        :title="customers.title"
-        :ui="{ images: 'mt-8 justify-center md:justify-around' }"
-        align="center"
-      >
-        <Img
-          v-for="(image, index) in customers.items"
-          :key="index"
-          :src="image"
-          :alt="`Customer brand ${index + 1}`"
-          class="w-20 h-20 object-contain flex-shrink-0"
-        />
-      </ULandingLogos>
-    </ULandingHero>
+    </ULandingHero> -->
 
     <ULandingSection
       :title="page.features.title"
