@@ -119,7 +119,6 @@
           <div
             class="text-center flex flex-col items-center justify-center space-y-4"
           >
-            <!-- <div class="bg-gradient-to-l from-gray-200 via-fuchsia-200 to-stone-100 h-screen flex flex-col items-center justify-center"> -->
             <p
               id="typewriter"
               ref="typewriter"
@@ -129,20 +128,46 @@
             </p>
             <p
               id="slogan"
-              class="mt-10 pb-2 w-full md:w-10/12 bg-gradient-to-r from-fuchsia-300 via-sky-500 to-cyan-800 bg-clip-text text-transparent font-bold text-center text-3xl md:text-5xl leading-relaxed leading-7"
+              class="mt-10 pb-2 w-full md:w-10/12 bg-gradient-to-r from-fuchsia-300 via-sky-500 to-cyan-800 bg-clip-text text-transparent font-bold text-center text-3xl md:text-5xl leading-relaxed"
             >
               {{ page.hero.headline.label }}
             </p>
             <p
-              class="w-full md:w-6/12 bg-gradient-to-br from-gray-300 via-stone-500 to-sky-700 bg-clip-text text-transparent leading-7 font-bold text-center md:text-2xl"
+              class="w-full md:w-6/12 pb-10 bg-gradient-to-br from-gray-300 via-stone-500 to-sky-700 bg-clip-text text-transparent leading-7 font-bold text-center md:text-2xl"
             >
               {{ page.hero.description }}
             </p>
-            <!-- </div> -->
+
+            <div class="w-full md:max-w-[450px] p-2 rounded-full bg-teal-500/10 flex flex-row justify-center md:justify-between items-center">
+              <div class="min-w-0 shrink w-60">
+                <input
+                  v-model="tracking_no"
+                  aria-label="Tracking No."
+                  class="block w-full p-3 text-black bg-transparent border border-transparent appearance-none rounded-xl focus:ring-0 focus:ring-offset-0  focus:outline-none  placeholder:text-gray-900/30 sm:text-sm"
+                  placeholder="FleetTurbo Tracking No."
+                  required
+                >
+              </div>
+              <button
+                class="button-17 bg-gary-900/10 py-2 px-4 rounded-full text-sm"
+              >
+                <UIcon
+                  name="i-heroicons-rocket-launch"
+                  class="w-5 h-5 mr-2 bg-blue-700 animate-pulse"
+                />
+                <span
+                class="text-blue-700"
+                  @click="openTracking"
+                >Track My Package</span>
+              </button>
+            </div>
+            <!-- <p class="mt-3 text-slate-500">
+                Get notified when we launch!
+              </p> -->
 
             <ULandingLogos
               :title="customers.title"
-              :ui="{ images: 'mt-8 justify-center md:justify-around' }"
+              :ui="{ images: 'mt-6 justify-center md:justify-around' }"
               align="center"
               class="pt-20 w-full"
             >
@@ -154,175 +179,6 @@
                 class="w-20 h-20 object-contain flex-shrink-0"
               />
             </ULandingLogos>
-
-            <div class="pb-24 mx-auto mt-12 hidden">
-              <div
-                class="grid w-full grid-cols-2 gap-6 mx-auto lg:grid-cols-6 md:grid-cols-3"
-              >
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 rounded-full"
-                              src="https://pbs.twimg.com/profile_images/1605606433722081282/r4ECyqWZ_400x400.jpg"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Dagobert Renouf
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-pink-500 rounded-full bg-pink-50"
-                              >Startups</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 border-2 border-black rounded-full"
-                              src="https://pbs.twimg.com/profile_images/1484538965109907461/VaQu5_PI_400x400.jpg"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Easlo
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-indigo-600 rounded-full bg-indigo-50"
-                              >Notion</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 border-2 border-black rounded-full"
-                              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Mike
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-indigo-600 rounded-full bg-indigo-50"
-                              >Astro</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 border-2 border-black rounded-full"
-                              src="https://pbs.twimg.com/profile_images/1476118697970483201/aUu84NTv_400x400.jpg"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Luca Restagnano
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-blue-500 rounded-full bg-blue-50"
-                              >Indie hacking</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 border-2 border-black rounded-full"
-                              src="https://pbs.twimg.com/profile_images/1543202856559321088/zAA7wfm9_400x400.jpg"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Ivan Karabadzhak
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-orange-600 rounded-full bg-orange-50"
-                              >Freelancer</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-                <div>
-                  <figure class="relative max-w-md mx-auto lg:mx-0">
-                    <div>
-                      <figcaption class="mt-2 text-sm">
-                        <div class="flex flex-col items-center">
-                          <div>
-                            <img
-                              alt=""
-                              class="inline-block w-16 h-16 border-2 border-black rounded-full"
-                              src="https://pbs.twimg.com/profile_images/1382124861862998016/BiLzL4HY_400x400.jpg"
-                            >
-                          </div>
-                          <div class="mt-3">
-                            <p class="font-semibold text-[#141521]">
-                              Christine Trac
-                            </p>
-                            <p class="mt-6">
-                              <span
-                                class="px-4 py-2 text-teal-500 rounded-full bg-teal-50"
-                              >Writing</span>
-                            </p>
-                          </div>
-                        </div>
-                      </figcaption>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -334,7 +190,11 @@
 const { data: page } = await useAsyncData('index', () =>
   queryContent('/').findOne()
 )
+
+const openTracking = () => navigateTo(tracking_link, { external: true })
 const typewriter = ref(null)
+const tracking_no = ref(null)
+const tracking_link = computed(() => `https://tracking.fleetturbo.com/tracking/en/${tracking_no.value}`)
 const customers = {
   title: 'We work with customers brands and startups',
   items: [
@@ -395,33 +255,114 @@ onMounted(() => {
   }
 
   #slogan {
-    position: relative;
-  }
+  position: relative;
+  overflow: hidden; /* 确保光照效果不会溢出 */
+}
 
-  #slogan::before {
-    content: '';
-    position: absolute;
-    top: 0;
+#slogan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1) 50%, /* 降低透明度 */
+    transparent 100%
+  );
+  animation: light-sweep 8s linear infinite;
+}
+
+#slogan span {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #9ca3af, /* 使用更亮的颜色 */
+    #d1d5db  /* 使用更亮的颜色 */
+  );
+}
+
+@keyframes light-sweep {
+  0% {
     left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(255, 255, 255, 0.8) 50%,
-      transparent 100%
-    );
-    animation: light-sweep 8s linear infinite;
+    opacity: 0;
   }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
 
-  #slogan span{
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(
-      to right,
-      #374151,
-      #374151
-    );
-  }
+/* CSS */
+.button-17 {
+  align-items: center;
+  appearance: none;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  height: 45px;
+  justify-content: center;
+  letter-spacing: .1px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 14px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
 </style>

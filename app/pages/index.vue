@@ -9,11 +9,10 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description
 })
-
 </script>
 
 <template>
-  <div>
+  <div class="w-full md:w-9/12 mx-auto leading-relaxed">
     <LandingPage />
 
     <!-- <ULandingHero
@@ -72,14 +71,17 @@ useSeoMeta({
     >
       <UPageColumns
         id="testimonials"
-        class="xl:columns-4 scroll-mt-[calc(var(--header-height)+140px+128px+96px)]"
+        class="columns-1 md:columns-3 scroll-mt-[calc(var(--header-height)+140px+128px+96px)] content-center justify-center items-center"
       >
         <div
           v-for="(testimonial, index) in page.testimonials.items"
           :key="index"
           class="break-inside-avoid"
         >
-          <ULandingTestimonial v-bind="testimonial" />
+          <ULandingTestimonial
+            v-bind="testimonial"
+            :ui="{ container: 'w-full' }"
+          />
         </div>
       </UPageColumns>
     </ULandingSection>
@@ -99,7 +101,7 @@ useSeoMeta({
 
           <div class="mt-8 flex items-center justify-center gap-x-6">
             <a
-              class="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               href="#"
             >
               Contact Us
