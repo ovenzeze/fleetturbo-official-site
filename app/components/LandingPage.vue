@@ -143,22 +143,30 @@
                 <input
                   v-model="tracking_no"
                   aria-label="Tracking No."
-                  class="block w-full p-3 text-black bg-transparent border border-transparent appearance-none rounded-xl focus:ring-0 focus:ring-offset-0  focus:outline-none  placeholder:text-gray-900/30 sm:text-sm"
+                  class="block w-full p-3 text-gray-800 bg-transparent border border-transparent appearance-none rounded-xl focus:ring-0 focus:ring-offset-0  focus:outline-none  placeholder:text-gray-900/30 sm:text-sm"
                   placeholder="FleetTurbo Tracking No."
                   required
                 >
               </div>
-              <button
-                class="button-17 bg-gary-900/10 py-2 px-4 rounded-full text-sm"
+              <!-- <button
+                class="flex flex-row font-sm items-center justify-center cursor-pointer text-white bg-gradient-to-r from-gray-800 to-black px-4 py-2 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900"
               >
                 <UIcon
                   name="i-heroicons-rocket-launch"
-                  class="w-5 h-5 mr-2 bg-blue-700 animate-pulse"
+                  class="w-5 h-5 mr-2"
                 />
                 <span
-                class="text-blue-700"
+                  class=""
                   @click="openTracking"
                 >Track My Package</span>
+              </button> -->
+
+              <button class="flex gap-3 cursor-pointer text-white text-sm font-sans bg-gradient-to-r from-gray-800 to-black px-4 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
+                <UIcon
+                  name="i-heroicons-rocket-launch"
+                  class="w-5 h-5"
+                />
+                Track My Package
               </button>
             </div>
             <!-- <p class="mt-3 text-slate-500">
