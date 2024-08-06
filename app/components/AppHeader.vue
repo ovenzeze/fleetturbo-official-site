@@ -49,9 +49,9 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       <NuxtImg
         src="/images/fleetturbo-logo.png"
         alt="Fleet Turbo"
-        width="140"
-        height="80"
-        class="md:ml-20"
+        width="120"
+        height="40"
+        class="md:ml-40"
       />
     </template>
 
