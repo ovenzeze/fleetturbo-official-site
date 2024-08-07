@@ -19,20 +19,26 @@ const links = [
 </script>
 
 <template>
-  <UFooter>
+  <UFooter class="dark:bg-gray-900">
     <template #top>
-      <UPageGrid :ui="{ wrapper: 'grid grid-cols-2 xl:grid-cols-4 gap-8' }">
-        <UPageCard
-          v-for="(module, index) in links"
-          :key="index"
-          v-bind="module"
-          target="_blank"
-        >
-          <template #description>
-            <span class="line-clamp-2">{{ module.description }}</span>
-          </template>
-        </UPageCard>
-      </UPageGrid>
+      <footer class="py-2 ">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div
+              v-for="(module, index) in links"
+              :key="index"
+              class="rounded-lg px-1 transition-all duration-300"
+            >
+              <h3 class="text-xs font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2">
+                {{ module.title }}
+              </h3>
+              <p class="text-xs text-gray-600 dark:text-gray-500 text-center md:text-left line-clamp-2">
+                {{ module.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       <!-- <UFooterColumns :links="links"> -->
       <!-- <template #right>
@@ -67,7 +73,7 @@ const links = [
     </template>
 
     <template #center>
-      <p class="text-gray-500 dark:text-gray-400 text-sm text-center">
+      <p class="text-gray-500 dark:text-gray-500 text-xs text-center uppercase">
         Copyright © FleetTurbo {{ new Date().getFullYear() }}. A LuLuGo Tech Company. All rights reserved.
       </p>
     </template>

@@ -13,48 +13,76 @@ hero:
       size: lg
 
 features:
-  headline: Your business partner in success!
-  title: We're not just a delivery company, but a last mile solutions provider
-  description: Trust Fleet Turbo for fast, cost-effective delivery across US. We offer delivery solutions for businesses of all sizes and industries.
+  headline: "Your trusted partner in last-mile delivery"
+  title: "More than just delivery - we're your last-mile solutions provider"
+  description: "Choose Fleet Turbo for fast, cost-effective delivery across the US. We offer tailored solutions for businesses of all sizes and industries."
   items:
-    - title: Cost saving solutions
-      description: Affordable, stable and simple pricing without any hidden costs
-      icon: i-heroicons-banknotes
-    - title: Speed solutions
-      description: Next day for local delivery, 2-5 day shipping period for nationwide delivery
-      icon: i-heroicons-bolt
-    - title: On time solutions
-      description: 99.8% On-Time Delivery Rate
-      icon: i-heroicons-clock
-    - title: 3 attempts solutions
-      description: Our standard service includes one initial delivery attempt and two subsequent redelivery attempts
-      icon: i-heroicons-arrow-path
-    - title: After service solutions
-      description: In house customer service teams
-      icon: i-heroicons-user-group
-    - title: E-commerce solutions
-      description: Easy integrations and platform access. In house technical support team
-      icon: i-heroicons-shopping-cart
+    - title: "Low-cost pricing"
+      description: "Transparent, stable pricing without hidden costs, optimized for your budget"
+      icon:
+        name: "ph:piggy-bank-duotone"
+        size: 24
+        color: "#4CAF50"
+    - title: "Next-day local"
+      description: "Next-day local delivery and 2-5 day nationwide shipping to meet your timeline"
+      icon:
+        name: "ph:truck-duotone"
+        size: 24
+        color: "#2196F3"
+    - title: "99.8% on-time"
+      description: "Exceptional reliability with a 99.8% on-time delivery rate, ensuring your customers' satisfaction"
+      icon:
+        name: "ph:clock-countdown-duotone"
+        size: 24
+        color: "#FFC107"
+    - title: "3 delivery attempts"
+      description: "Three delivery attempts standard, maximizing successful deliveries"
+      icon:
+        name: "ph:repeat-duotone"
+        size: 24
+        color: "#9C27B0"
+    - title: "In-house support"
+      description: "Dedicated in-house customer service team for prompt, personalized assistance"
+      icon:
+        name: "ph:headset-duotone"
+        size: 24
+        color: "#E91E63"
+    - title: "Easy integration"
+      description: "Seamless platform integration with expert technical support"
+      icon:
+        name: "ph:plugs-connected-duotone"
+        size: 24
+        color: "#FF5722"
+
 
 services:
-  headline: The right solutions for ALL!
-  title: From Startup To Enterprise
-  description: We offer delivery solutions for businesses of all sizes and industries.
-  plans:
-    - title: Local retail business
-      icon: i-heroicons-building-storefront
-    - title: E-commerce
-      icon: i-heroicons-shopping-bag
-    - title: Wholesale business
-      icon: i-heroicons-truck
-    - title: Government & Organization
-      icon: i-heroicons-building-office-2
-    - title: 3PL & Logistics
-      icon: i-heroicons-cube
+    headline: "Tailored solutions for every business"
+    title: "Serving diverse industries"
+    description: "Our versatile delivery services cater to a wide range of business needs."
+    plans:
+      - title: "Local retail businesses"
+        icon: "ri-store-2-line"
+        image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      - title: "E-commerce platforms"
+        icon: "ri-shopping-bag-line"
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      - title: "Wholesale distributors"
+        icon: "ri-truck-line"
+        image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      - title: "Government & Organizations"
+        icon: "ri-government-line"
+        image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      - title: "3PL & Logistics providers"
+        icon: "ri-box-3-line"
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      - title: "Healthcare & Pharmaceuticals"
+        icon: "ri-test-tube-line"
+        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+
 
 testimonials:
   headline: What our customers say
-  title: Trusted by businesses across the US
+  title: Trusted by businesses partners
   description: Hear from our satisfied customers about their experience with FleetTurbo.
   items:
     - quote: I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions.

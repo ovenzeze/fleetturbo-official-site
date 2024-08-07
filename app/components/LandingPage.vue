@@ -188,7 +188,7 @@
                 :key="index"
                 :src="image"
                 :alt="`Customer brand ${index + 1}`"
-                class="w-20 h-20 object-contain flex-shrink-0"
+                class="w-20 h-20 object-contain flex-shrink-0 dark:brightness-200 dark:filter dark:grayscale-50"
               />
             </ULandingLogos>
           </div>
@@ -199,9 +199,7 @@
 </template>
 
 <script setup>
-const { data: page } = await useAsyncData('index', () =>
-  queryContent('/').findOne()
-)
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
 const openTracking = async () => await navigateTo(tracking_link.value, { external: true })
 const typewriter = ref(null)
@@ -209,13 +207,7 @@ const tracking_no = ref(null)
 const tracking_link = computed(() => `https://tracking.fleetturbo.com/tracking/en/${tracking_no.value}`)
 const customers = {
   title: 'We work with customers brands and startups',
-  items: [
-    'images/brands-jt.webp',
-    'images/brands-piggy.png',
-    'images/brands-speedx.png',
-    'images/brands-uniuni.svg',
-    'images/logo.png'
-  ]
+  items: ['images/brands-jt.webp', 'images/brands-piggy.png', 'images/brands-speedx.png', 'images/brands-uniuni.svg', 'images/logo.png']
 }
 
 const text = 'Final Mile Delivery Solutions'
