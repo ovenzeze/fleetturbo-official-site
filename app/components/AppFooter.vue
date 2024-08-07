@@ -68,7 +68,7 @@ const links = [
 
     <template #center>
       <p class="text-gray-500 dark:text-gray-400 text-sm text-center">
-        Copyright © FleetTurbo {{ new Date().getFullYear() }}. All rights reserved.
+        Copyright © FleetTurbo {{ new Date().getFullYear() }}. A LuLuGo Tech Company. All rights reserved.
       </p>
     </template>
 
