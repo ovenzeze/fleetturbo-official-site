@@ -47,7 +47,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
   <UHeader :links="links">
     <template #logo>
       <NuxtImg
-        src="/images/fleetturbo-logo.png"
+        src="/images/logo-horizon-full-transparent.png"
         alt="Fleet Turbo"
         width="120"
         height="40"
