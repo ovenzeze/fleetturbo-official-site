@@ -19,7 +19,7 @@ const links = [
 </script>
 
 <template>
-  <UFooter class="dark:bg-gray-900">
+  <UFooter class="dark:bg-gray-900 ">
     <template #top>
       <footer class="py-2 ">
         <div class="container mx-auto px-4">
@@ -29,7 +29,7 @@ const links = [
               :key="index"
               class="rounded-lg px-1 transition-all duration-300"
             >
-              <h3 class="text-xs font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2">
+              <h3 class="text-xs font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2 text-center md:text-left">
                 {{ module.title }}
               </h3>
               <p class="text-xs text-gray-600 dark:text-gray-500 text-center md:text-left line-clamp-2">
@@ -73,9 +73,12 @@ const links = [
     </template>
 
     <template #center>
-      <p class="text-gray-500 dark:text-gray-500 text-xs text-center uppercase">
-        Copyright © FleetTurbo {{ new Date().getFullYear() }}. A LuLuGo Tech Company. All rights reserved.
-      </p>
+      <div style="padding: 2px; font-size: 12px; color: #666666; text-align: center;">
+        <p style="text-transform: uppercase; text-align: center; margin: 0 auto; max-width: 100%;">
+          Copyright © FleetTurbo {{ new Date().getFullYear() }}. A LuLuGo Tech Company.<br>
+          All rights reserved.
+        </p>
+      </div>
     </template>
 
     <template #right>

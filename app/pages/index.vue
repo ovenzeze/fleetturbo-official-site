@@ -12,7 +12,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="w-full mx-auto leading-relaxed dark:bg-gray-900 md:px-[6%] lg:px-[15%]">
+  <div class="w-full mx-auto leading-relaxed dark:bg-gray-900 md:px-[6%] lg:px-[15%] ">
     <LandingPage />
     <Features id="features" />
     <Services id="services" />
