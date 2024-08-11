@@ -26,7 +26,7 @@
               :style="{ backgroundColor: item.icon.color }"
               class="bg-gray-100 dark:bg-gray-700 p-2 rounded-full"
             />
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-300 ml-3">
+            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-300 ml-3 uppercase">
               {{ item.title }}
             </h4>
           </div>

@@ -2,22 +2,25 @@
 <template>
   <div
     v-if="proofs.length"
-    class="max-w-3xl mx-auto mt-8 px-4"
+    class="mx-auto mt-8 w-full min-w-[370px] rounded-lg max-h-[300px] overflow-scroll dark:brightness-50"
   >
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      <div
-        v-for="(proof, index) in proofs"
-        :key="index"
-        class="aspect-square"
+    <UCarousel
+      v-slot="{ item }"
+      arrows
+      :items="carouselList"
+      :ui="{
+        item: 'basis-full',
+        indicators: {
+          wrapper: 'relative bottom-0 mt-4'
+        }
+      }"
+    >
+      <img
+        :src="item"
+        class="w-[100%] h-[100%] object-contain rounded-lg cursor-pointer max-h-[300px]"
+        draggable="false"
       >
-        <img
-          :src="`https://api.fleetturbo.com${proof.url}`"
-          :alt="`Proof ${index + 1}`"
-          class="w-full h-full object-cover rounded-lg shadow-sm cursor-pointer"
-          @click="openFullscreen(index)"
-        >
-      </div>
-    </div>
+    </UCarousel>
   </div>
 
   <!-- Fullscreen Modal -->
@@ -61,8 +64,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 const props = defineProps({
   proofs: {
     type: Array,
@@ -71,10 +72,13 @@ const props = defineProps({
 })
 
 const fullscreenImage = ref(null)
+const carouselList = computed(() =>
+  props.proofs.map(proof => `https://api.fleetturbo.com${proof.url}`)
+)
 
-function openFullscreen(index) {
-  fullscreenImage.value = props.proofs[index]
-}
+// function openFullscreen(index) {
+//   fullscreenImage.value = props.proofs[index]
+// }
 
 function closeFullscreen() {
   fullscreenImage.value = null

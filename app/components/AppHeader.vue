@@ -47,14 +47,14 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
   <UHeader
     :links="links"
     class="dark:bg-gray-900"
-    :ui="{ wapper: 'mb-0'}"
+    :ui="{ wapper: 'mb-0' }"
   >
     <template #logo>
       <NuxtImg
         src="/images/logo-horizon-full-transparent.png"
         alt="Fleet Turbo"
         width="120"
-        class="md:ml-60 dark:brightness-200"
+        class="md:ml-60 filter dark:brightness-200 brightness-25 "
       />
     </template>
 

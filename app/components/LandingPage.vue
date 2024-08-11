@@ -1,116 +1,5 @@
 <template>
   <section class="relative overflow-hidden">
-    <!-- <svg
-      class="absolute blur-3xl -right-96 -top-80"
-      fill="none"
-      viewBox="0 0 400 400"
-      height="80%"
-      width="80%"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clip-path="url(#clip0_10_20)">
-        <g filter="url(#filter0_f_10_20)">
-          <path
-            d="M128.6 0H0V322.2L106.2 134.75L128.6 0Z"
-            fill="#03FFE0"
-          />
-          <path
-            d="M0 322.2V400H240H320L106.2 134.75L0 322.2Z"
-            fill="#7C87F8"
-          />
-          <path
-            d="M320 400H400V78.75L106.2 134.75L320 400Z"
-            fill="#4C65E4"
-          />
-          <path
-            d="M400 0H128.6L106.2 134.75L400 78.75V0Z"
-            fill="#6551f3"
-          />
-        </g>
-      </g>
-      <defs>
-        <filter
-          id="filter0_f_10_20"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-          height="720.666"
-          width="720.666"
-          x="-160.333"
-          y="-160.333"
-        >
-          <feFlood
-            flood-opacity="0"
-            result="BackgroundImageFix"
-          />
-          <feBlend
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            mode="normal"
-            result="shape"
-          />
-          <feGaussianBlur
-            result="effect1_foregroundBlur_10_20"
-            stdDeviation="80.1666"
-          />
-        </filter>
-      </defs>
-    </svg>
-    <svg
-      class="absolute blur-3xl -bottom-64 left-[-30rem]"
-      fill="none"
-      viewBox="0 0 400 400"
-      height="60%"
-      width="60%"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clip-path="url(#clip0_10_20)">
-        <g filter="url(#filter0_f_10_20)">
-          <path
-            d="M128.6 0H0V322.2L106.2 134.75L128.6 0Z"
-            fill="#03FFE0"
-          />
-          <path
-            d="M0 322.2V400H240H320L106.2 134.75L0 322.2Z"
-            fill="#7C87F8"
-          />
-          <path
-            d="M320 400H400V78.75L106.2 134.75L320 400Z"
-            fill="#4C65E4"
-          />
-          <path
-            d="M400 0H128.6L106.2 134.75L400 78.75V0Z"
-            fill="#6551f3"
-          />
-        </g>
-      </g>
-      <defs>
-        <filter
-          id="filter0_f_10_20"
-          color-interpolation-filters="sRGB"
-          filterUnits="userSpaceOnUse"
-          height="720.666"
-          width="720.666"
-          x="-160.333"
-          y="-160.333"
-        >
-          <feFlood
-            flood-opacity="0"
-            result="BackgroundImageFix"
-          />
-          <feBlend
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            mode="normal"
-            result="shape"
-          />
-          <feGaussianBlur
-            result="effect1_foregroundBlur_10_20"
-            stdDeviation="80.1666"
-          />
-        </filter>
-      </defs>
-    </svg> -->
-
     <section class="relative flex items-center justify-center overflow-hidden">
       <div
         class="relative items-center w-full px-5 py-12 mx-auto lg:px-16 lg:py-24 max-w-7xl md:px-12"
@@ -138,7 +27,7 @@
               {{ page.hero.description }}
             </p>
 
-            <div class="w-full md:max-w-[490px] p-2 rounded-full bg-teal-500/10 flex flex-row justify-center md:justify-between items-center">
+            <div class="w-full md:max-w-[490px] p-2 rounded-full bg-teal-500/10 dark:bg-teal-900 flex flex-row justify-between items-center">
               <div class="min-w-0 shrink w-60">
                 <input
                   v-model="tracking_no"
@@ -146,22 +35,8 @@
                   class="block w-full p-3 text-gray-800 bg-transparent border border-transparent appearance-none rounded-xl focus:ring-0 focus:ring-offset-0  focus:outline-none  placeholder:text-gray-900/30 sm:text-sm placeholder:text-xs md:placeholder:text-sm"
                   placeholder="FleetTurbo Tracking No."
                   required
-                  :disabled="String(tracking_no).length < 1"
                 >
               </div>
-              <!-- <button
-                class="flex flex-row font-sm items-center justify-center cursor-pointer text-white bg-gradient-to-r from-gray-800 to-black px-4 py-2 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900"
-              >
-                <UIcon
-                  name="i-heroicons-rocket-launch"
-                  class="w-5 h-5 mr-2"
-                />
-                <span
-                  class=""
-                  @click="openTracking"
-                >Track My Package</span>
-              </button> -->
-
               <div
                 class="min-w-[180px] flex gap-3 items-center justify-center cursor-pointer text-white text-xs md:text-sm font-sans bg-gradient-to-r from-gray-800 to-black px-2 md:px-4 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900"
                 @click="openTracking"
@@ -199,12 +74,29 @@
 </template>
 
 <script setup>
+import { isValidTrackingNo } from '~~/utils/common';
+
+const toast = useToast()
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
-const openTracking = async () => await navigateTo(tracking_link.value, { external: true })
 const typewriter = ref(null)
 const tracking_no = ref(null)
 const tracking_link = computed(() => `/tracking?s=${tracking_no.value}`)
+
+const isValidTrackingNumber = computed(() => isValidTrackingNo(tracking_no.value))
+
+async function openTracking() {
+  if (!isValidTrackingNumber.value) {
+    toast.add({
+      title: 'Invalid Tracking Number',
+      description: 'Invalid tracking number format. Please check your delivery details and try again.',
+      status: 'error',
+      duration: 3000
+    })
+    return
+  }
+  await navigateTo(tracking_link.value, { external: true })
+}
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const customers = {
   title: 'We work with customers brands and startups',

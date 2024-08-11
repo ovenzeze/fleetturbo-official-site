@@ -2,6 +2,11 @@ export default defineAppConfig({
   ui: {
     primary: 'indigo',
     gray: 'zinc',
+    ui: {
+      notifications: {
+        position: 'top-0 bottom-auto'
+      }
+    },
     variables: {
       light: {
         background: 'var(--color-gray-50)'

@@ -1,85 +1,162 @@
 <template>
-  <div class="mx-auto px-6 max-w-[420px]">
-    <div
-      class="p-4 bg-white rounded-lg shadow-sm dark:bg-gray-800 border-gray-300 border-l-4 scale-90"
-      :class="[getBorderColor(currentStatusId)]"
-    >
-      <h3 class="text-base text-gray-900 dark:text-white mb-3 flex items-center">
-        <UIcon
-          :name="getStatusIcon(currentStatusId)"
-          class="w-6 h-6 mr-2"
-          :class="getStatusColor(currentStatusId)"
+  <UCard
+    :class="['max-w-md mx-auto', status.borderColor]"
+    class="border-l-4 dark:brightness-75"
+    :ui="{ padding: 'p-2', footer: { padding: 'p-1', base: 'border-t border-gray-900 ' } }"
+  >
+    <div class="flex items-center justify-between mb-4 ">
+      <div class="flex flex-row justify-center items-center">
+        <Icon
+          :name="status.icon"
+          :class="`${status.color} status-card-icon `"
         />
-        {{ getStatusLabel(currentStatusId) }}
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-center">
-          <UIcon
+        <h3 class="text-sm font-medium uppercase">
+          {{ status.label }}
+        </h3>
+      </div>
+      <span class="text-xs text-gray-900/30 uppercase dark:text-gray-500">Status</span>
+    </div>
+
+    <div class="space-y-3">
+      <div class="flex items-center justify-between">
+        <div class="flex flex-row justify-center items-center">
+          <Icon
             name="i-heroicons-truck"
-            :class="getStatusColor(currentStatusId)"
-            class="w-6 h-6 mr-3 text-gray-500 dark:text-gray-400"
+            color="red"
+            :class="`${status.color}-500 status-card-icon`"
           />
-          <span class="text-base  text-gray-700 dark:text-gray-300">
-            <span class="">{{ trackingNumber }}</span>
+          <span class="text-sm font-medium">{{ info.trackingNo }}</span>
+        </div>
+        <span class="text-xs text-gray-900/30 uppercase dark:text-gray-500">Tracking No.</span>
+      </div>
+
+      <div
+        v-for="field in status.fields"
+        :key="field.key"
+        class="flex items-center justify-between"
+      >
+        <div class="flex flex-row justify-center items-center">
+          <Icon
+            :name="field.icon"
+            :class="`status-card-icon`"
+          />
+          <span class="text-sm font-medium">
+            {{ getFieldValue(field.key) }}
           </span>
         </div>
-        <div class="flex items-center">
-          <UIcon
-            name="i-heroicons-clock"
-            :class="getStatusColor(currentStatusId)"
-            class="w-6 h-6 mr-3 text-gray-500 dark:text-gray-400"
-          />
-          <span class="text-base  text-gray-700 dark:text-gray-300">
-            <span class="">{{ formatDateTime(lastUpdated) }}</span>
-          </span>
-        </div>
+        <span class="text-xs text-gray-900/30 dark:text-gray-500 uppercase">{{ field.label }}</span>
       </div>
     </div>
-  </div>
+
+    <template #footer>
+      <div class="flex items-center justify-center w-full h-8 leading-8 font-bold text-center md:text-2xl relative z-10 bg-gradient-to-r from-gray-200 via-zinc-200 to-gray-50-800 bg-clip-text text-transparent">
+        <Icon
+          name="heroicons:shield-check"
+          style="color: rgb(17 24 39 / 0.3);"
+          class="w-4 h-4 mr-1 bg-gradient-to-r from-gray-500 via-zinc-500 to-gray-50-800"
+        />
+        <span class="text-xs text-gray-900/30 uppercase">Proundly Shiped By FleetTurbo</span>
+      </div>
+    </template>
+  </UCard>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { format } from 'date-fns'
+
+const statusConfig = {
+  500: {
+    color: 'emerald',
+    borderColor: 'border-emerald-500',
+    icon: 'i-ph-check-circle',
+    label: 'Delivered',
+    fields: [
+      { key: 'deliveryTime', label: 'Delivery Time', icon: 'i-ph-clock' },
+      { key: 'proofOfDelivery', label: 'Proof of Delivery', icon: 'i-ph-clipboard-text' }
+    ]
+  },
+  450: {
+    color: 'sky',
+    borderColor: 'border-sky-500',
+    icon: 'i-ph-truck',
+    label: 'Out for Delivery',
+    fields: [
+      { key: 'estimatedDeliveryDate', label: 'Estimated Delivery Date', icon: 'i-ph-calendar' },
+      { key: 'lastKnownLocation', label: 'Last Known Location', icon: 'i-ph-map-pin' }
+    ]
+  },
+  400: {
+    color: 'amber',
+    borderColor: 'border-amber-500',
+    icon: 'i-ph-arrows-clockwise',
+    label: 'In Transit',
+    fields: [
+      { key: 'currentStatus', label: 'Current Status', icon: 'i-ph-info' },
+      { key: 'estimatedArrivalDate', label: 'Estimated Arrival Date', icon: 'i-ph-calendar' }
+    ]
+  },
+  402: {
+    color: 'orange',
+    borderColor: 'border-orange-500',
+    icon: 'i-ph-hourglass',
+    label: 'Pending Update',
+    fields: [
+      { key: 'lastScan', label: 'Last Scan', icon: 'i-ph-scan' },
+      { key: 'nextExpectedUpdate', label: 'Next Expected Update', icon: 'i-ph-calendar' }
+    ]
+  },
+  100: {
+    color: 'indigo',
+    borderColor: 'border-indigo-500',
+    icon: 'i-ph-package',
+    label: 'Shipment Received',
+    fields: [
+      { key: 'orderDate', label: 'Order Date', icon: 'i-ph-calendar' }
+    ]
+  }
+}
+
+const defaultStatus = {
+  color: 'slate',
+  borderColor: 'border-slate-300',
+  icon: 'i-ph-question',
+  label: 'Status Unavailable',
+  fields: [
+    { key: 'lastUpdate', label: 'Last Update', icon: 'i-ph-info' }
+  ]
+}
 
 const props = defineProps({
   info: {
-    type: Array,
-    default: () => []
-  },
-  trackingNo: {
-    type: String,
-    default: 'unknown'
+    type: Object,
+    required: true,
+    default: () => ({})
   }
 })
 
-const statusConfig = {
-  500: { color: 'text-green-500', borderColor: 'border-green-500', icon: 'i-heroicons-check-circle', label: 'Delivered' },
-  450: { color: 'text-blue-500', borderColor: 'border-blue-500', icon: 'i-heroicons-truck', label: 'Out for Delivery' },
-  400: { color: 'text-yellow-500', borderColor: 'border-yellow-500', icon: 'i-heroicons-clock', label: 'Processing' },
-  402: { color: 'text-yellow-500', borderColor: 'border-yellow-500', icon: 'i-heroicons-clock', label: 'Updating Soon' },
-  100: { color: 'text-purple-500', borderColor: 'border-purple-500', icon: 'i-heroicons-document-text', label: 'Submitted' }
+const statusId = computed(() => (props['info'].statusId))
+const status = computed(() => statusConfig[statusId.value] || defaultStatus)
+
+const formatDateTime = (timestamp) => {
+  if (!timestamp) return 'N/A'
+  const date = new Date(typeof timestamp === 'number' ? timestamp * 1000 : timestamp)
+  return format(date, 'MMM d, yyyy hh:mm a')
 }
 
-const trackingNumber = computed(() => props.trackingNo)
-const lastUpdated = computed(() => {
-  const date = props.info?.[0]?.updated_at
-  return date ? formatDateTime(date) : 'No data available'
-})
-const currentStatusId = computed(() => props.info?.[0]?.tracking_event_status_id || 0)
-
-const getStatusColor = statusId => statusConfig[statusId]?.color || 'text-gray-500'
-const getBorderColor = statusId => statusConfig[statusId]?.borderColor || 'border-l-gray-300'
-const getStatusIcon = statusId => statusConfig[statusId]?.icon || 'i-heroicons-question-mark-circle'
-const getStatusLabel = statusId => statusConfig[statusId]?.label || 'Unknown Status'
-const formatDateTime = (timestamp) => {
-  const isTimestamp = typeof timestamp === 'number' && timestamp > 0
-  return new Date(isTimestamp ? timestamp * 1000 : timestamp).toLocaleString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true
-  })
+const getFieldValue = (key) => {
+  const value = props.info[key]
+  if (key.toLowerCase().includes('date') || key.toLowerCase().includes('time')) {
+    return formatDateTime(value)
+  }
+  if (key === 'proofOfDelivery') {
+    return 'Picture Of Delivery'
+  }
+  return value || 'Not Available'
 }
 </script>
+
+<style>
+.status-card-icon {
+  @apply w-5 h-5 mr-3
+  }
+</style>

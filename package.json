@@ -26,7 +26,9 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.68",
+    "@iconify/json": "^2.2.235",
     "@nuxt/eslint": "^0.3.13",
+    "date-fns": "^3.6.0",
     "eslint": "^9.6.0",
     "vue-tsc": "^2.0.26"
   },

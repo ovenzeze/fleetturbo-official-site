@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   ],
 
   ui: {
-    icons: ['heroicons', 'simple-icons']
+    icons: ['heroicons', 'simple-icons', 'ph']
   },
 
   routeRules: {
