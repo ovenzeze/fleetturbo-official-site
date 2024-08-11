@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 py-6 w-full max-w-[460px] min-w-[400px] mx-auto">
+  <div class="px-5 py-6 w-full max-w-[460px] min-w-[38px] mx-auto">
     <ul class="relative border-l border-gray-200 dark:border-gray-800">
       <li
         v-for="(item, index) in logisticsData"

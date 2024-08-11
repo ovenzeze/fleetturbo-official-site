@@ -2,7 +2,7 @@
 <template>
   <div
     v-if="proofs.length"
-    class="mx-auto mt-8 w-full min-w-[370px] rounded-lg max-h-[300px] overflow-scroll dark:brightness-50"
+    class="mt-8 w-full min-w-[370px] rounded-lg max-h-[300px] overflow-scroll dark:brightness-50"
   >
     <UCarousel
       v-slot="{ item }"
