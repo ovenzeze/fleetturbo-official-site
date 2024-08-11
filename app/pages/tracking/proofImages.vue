@@ -21,7 +21,6 @@
   </div>
 
   <!-- Fullscreen Modal -->
-  // eslint-disable-next-line vue/no-multiple-template-root
   <Teleport to="body">
     <div
       v-if="fullscreenImage"
