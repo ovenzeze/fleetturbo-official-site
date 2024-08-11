@@ -177,7 +177,7 @@
                 Get notified when we launch!
               </p> -->
 
-            <ULandingLogos
+            <!-- <ULandingLogos
               :title="customers.title"
               :ui="{ images: 'mt-6 justify-center md:justify-around' }"
               align="center"
@@ -190,7 +190,7 @@
                 :alt="`Customer brand ${index + 1}`"
                 class="w-20 h-20 object-contain flex-shrink-0 dark:brightness-200 dark:filter dark:grayscale-50"
               />
-            </ULandingLogos>
+            </ULandingLogos> -->
           </div>
         </div>
       </div>
@@ -204,7 +204,8 @@ const { data: page } = await useAsyncData('index', () => queryContent('/').findO
 const openTracking = async () => await navigateTo(tracking_link.value, { external: true })
 const typewriter = ref(null)
 const tracking_no = ref(null)
-const tracking_link = computed(() => `https://tracking.fleetturbo.com/tracking/en/${tracking_no.value}`)
+const tracking_link = computed(() => `/tracking?s=${tracking_no.value}`)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const customers = {
   title: 'We work with customers brands and startups',
   items: ['images/brands-jt.webp', 'images/brands-piggy.png', 'images/brands-speedx.png', 'images/brands-uniuni.svg', 'images/logo.png']
