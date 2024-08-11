@@ -155,8 +155,11 @@ const getFieldValue = (key) => {
 }
 </script>
 
-<style>
+<style lang="scss">
 .status-card-icon {
-  @apply w-5 h-5 mr-3
-  }
+  width: 1.25rem; /* Equivalent to w-5 in Tailwind */
+  height: 1.25rem; /* Equivalent to h-5 in Tailwind */
+  margin-right: 0.75rem; /* Equivalent to mr-3 in Tailwind */
+}
 </style>
+

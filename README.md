@@ -1,95 +1,57 @@
-![nuxt-ui-landing-social-card](https://github.com/nuxt-ui-pro/landing/assets/739984/d0919c96-e5f2-47e9-b460-44f87341218d)
+## FleetTurbo Official Site
 
-# Nuxt UI Pro - Landing template
+This is the official site of FleetTurbo, a platform for sharing and managing fleets of vehicles.
 
-This starter lets you get started with [Nuxt UI Pro](https://ui.nuxt.com/pro) quickly.
+<!-- File Structure -->
+# FleetTurbo Official Site
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
+This is the official site of FleetTurbo, a platform for sharing and managing fleets of vehicles.
 
-- [Live demo](https://landing-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/landing)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
+## Table of Contents
 
-https://github.com/nuxt-ui-pro/landing/assets/904724/c7dd64a4-a09c-4cab-9572-92a02a5e06f9
+* [Features](#features)
+* [Services](#services)
+* [Testimonials](#testimonials)
+* [FAQ](#faq)
+* [Contact](#contact)
 
-## Quick Start
+## Features
 
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/landing
-```
+FleetTurbo offers a range of features to help you manage your fleet of vehicles. Some of our key features include:
 
-## Setup
+* **Final Mile Delivery Solutions**: Get fast delivery of anything, anywhere in the US with the best technology, drivers, and customer experience in the industry.
+* **Tracking and Proof of Delivery**: Track your packages in real-time and receive proof of delivery with our advanced tracking system.
+* **Customized Solutions**: Our team works with you to create customized solutions that meet your unique business needs.
 
-Make sure to install the dependencies:
+## Services
 
-```bash
-# npm
-npm install
+We offer a variety of services to help you manage your fleet of vehicles. Some of our services include:
 
-# pnpm
-pnpm install
+* **Ocean Freight**: We provide ocean freight services to help you transport your goods across the globe.
+* **Cross Border Services**: Our team helps you navigate the complexities of cross-border shipping.
+* **3PL Solutions**: We offer third-party logistics solutions to help you streamline your supply chain.
 
-# yarn
-yarn install
+## Testimonials
 
-# bun
-bun install
-```
+Don't just take our word for it! Here's what some of our satisfied customers have to say:
 
-## Development Server
+> I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions. - Online Business Owner
+> My store is located in the neighbor street of Fleet Turbo in CA. They pick up the parcels daily from my store, they were very patient to get to know my business and my needs, and they were very open to discussion. - Local Store Owner
+> We tasked Fleet Turbo to deliver our parcels to our customers. They are well organized, and even though we were on a tight schedule, needing rush delivery, they executed everything on time and on budget. - Corporate Client
 
-Start the development server on `http://localhost:3000`:
+## FAQ
 
-```bash
-# npm
-npm run dev
+Frequently asked questions about our services and solutions.
 
-# pnpm
-pnpm run dev
+* **What areas do you serve?**: We provide delivery services across the entire United States.
+* **How fast is your delivery?**: We offer next day delivery for local shipments and 2-5 day shipping for nationwide delivery.
+* **Do you offer insurance?**: Yes, all shipments are covered by our standard insurance policy up to $100.
+* **What additional services do you offer?**: Besides delivery, we also offer Ocean Freight, Cross border services, and 3PL solutions.
 
-# yarn
-yarn dev
+## Contact
 
-# bun
-bun run dev
-```
+Get in touch with us to learn more about our services and solutions.
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+* **Address**: 2023 S 8TH ST ALHAMBRA, CA 91803
+* **Email**: [info@fleetturbo.com](mailto:info@fleetturbo.com)
+* **Phone**: 1 6264762304

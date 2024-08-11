@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/content',
-    '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
@@ -12,11 +11,10 @@ export default defineNuxtConfig({
   ],
 
   ui: {
-    icons: ['heroicons', 'simple-icons', 'ph']
+    icons: ['heroicons', 'ph']
   },
 
   routeRules: {
-    // Temporary workaround for prerender regression. see https://github.com/nuxt/nuxt/issues/27490
     '/': { prerender: true }
   },
 

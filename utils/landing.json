@@ -1,0 +1,162 @@
+{
+  "title": "FleetTurbo - Final Mile Delivery Solutions",
+  "description": "Fueled by Foresight, Turbocharged by Technology! Get fast delivery of anything, anywhere in the US with the best technology, drivers, and customer experience in the industry.",
+  "hero": {
+    "title": "Final Mile Delivery Solutions",
+    "description": "Get fast delivery of anything, anywhere in the US with the best technology, drivers, and customer experience in the industry.",
+    "headline": {
+      "label": "Fueled by Foresight, Turbocharged by Technology"
+    },
+    "links": [
+      {
+        "label": "Track your package",
+        "icon": "i-heroicons-rocket-launch",
+        "to": "#track",
+        "size": "lg"
+      }
+    ]
+  },
+  "features": {
+    "headline": "Your trusted partner in last-mile delivery",
+    "title": "More than just delivery - we're your last-mile solutions provider",
+    "description": "Choose Fleet Turbo for fast, cost-effective delivery across the US. We offer tailored solutions for businesses of all sizes and industries.",
+    "items": [
+      {
+        "title": "Low-cost pricing",
+        "description": "Transparent, stable pricing without hidden costs, optimized for your budget",
+        "icon": {
+          "name": "ph:piggy-bank-duotone",
+          "size": 24,
+          "color": "#4CAF50"
+        }
+      },
+      {
+        "title": "Next-day local",
+        "description": "Next-day local delivery and 2-5 day nationwide shipping to meet your timeline",
+        "icon": {
+          "name": "ph:truck-duotone",
+          "size": 24,
+          "color": "#2196F3"
+        }
+      },
+      {
+        "title": "99.8% on-time",
+        "description": "Exceptional reliability with a 99.8% on-time delivery rate, ensuring your customers' satisfaction",
+        "icon": {
+          "name": "ph:clock-countdown-duotone",
+          "size": 24,
+          "color": "#FFC107"
+        }
+      },
+      {
+        "title": "3 delivery attempts",
+        "description": "Three delivery attempts standard, maximizing successful deliveries",
+        "icon": {
+          "name": "ph:repeat-duotone",
+          "size": 24,
+          "color": "#9C27B0"
+        }
+      },
+      {
+        "title": "In-house support",
+        "description": "Dedicated in-house customer service team for prompt, personalized assistance",
+        "icon": {
+          "name": "ph:headset-duotone",
+          "size": 24,
+          "color": "#E91E63"
+        }
+      },
+      {
+        "title": "Easy integration",
+        "description": "Seamless platform integration with expert technical support",
+        "icon": {
+          "name": "ph:plugs-connected-duotone",
+          "size": 24,
+          "color": "#FF5722"
+        }
+      }
+    ]
+  },
+  "services": {
+    "headline": "Tailored solutions for every business",
+    "title": "Serving diverse industries",
+    "description": "Our versatile delivery services cater to a wide range of business needs.",
+    "items": [
+      {
+        "title": "Local retail businesses",
+        "icon": "ri-store-2-line",
+        "image": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "title": "E-commerce platforms",
+        "icon": "ri-shopping-bag-line",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "title": "Wholesale distributors",
+        "icon": "ri-truck-line",
+        "image": "https://images.unsplash.com/photo-1553413077-190dd3056f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "title": "Food and beverage",
+        "icon": "ri-restaurant-line",
+        "image": "https://images.unsplash.com/photo-1552566626-cc9c85e9f8eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "title": "Health and wellness",
+        "icon": "ri-medical-line",
+        "image": "https://images.unsplash.com/photo-1553413077-190dd3056f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "What our customers say",
+    "title": "Real stories from our satisfied customers",
+    "description": "Don't just take our word for it! Here's what some of our satisfied customers have to say:",
+    "items": [
+      {
+        "quote": "I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions.",
+        "author": "Online Business Owner"
+      },
+      {
+        "quote": "My store is located in the neighbor street of Fleet Turbo in CA. They pick up the parcels daily from my store, they were very patient to get to know my business and my needs, and they were very open to discussion.",
+        "author": "Local Store Owner"
+      },
+      {
+        "quote": "We tasked Fleet Turbo to deliver our parcels to our customers. They are well organized, and even though we were on a tight schedule, needing rush delivery, they executed everything on time and on budget.",
+        "author": "Corporate Client"
+      }
+    ]
+  },
+  "faq": {
+    "headline": "Frequently asked questions",
+    "title": "Get answers to your questions",
+    "description": "Here are some frequently asked questions about our services:",
+    "items": [
+      {
+        "question": "What areas do you serve?",
+        "answer": "We provide delivery services across the entire United States."
+      },
+      {
+        "question": "How fast is your delivery?",
+        "answer": "We offer next-day delivery for local shipments and 2-5 day shipping for nationwide delivery."
+      },
+      {
+        "question": "Do you offer insurance?",
+        "answer": "Yes, all shipments are covered by our standard insurance policy up to $100."
+      },
+      {
+        "question": "What additional services do you offer?",
+        "answer": "Besides delivery, we also offer Ocean Freight, Cross border services, and 3PL solutions."
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Get in touch",
+    "title": "Contact us today",
+    "description": "Get in touch with us to learn more about our services and solutions.",
+    "address": "1617 S 9TH ST, CA 91803",
+    "email": "info@fleetturbo.com",
+    "phone": "16264762304"
+  }
+}
