@@ -1,81 +1,81 @@
 enum TrackingEventStatusId {
-  OrderSubmitted = 100,
-  Processing = 400,
-  UpdatePending = 402,
-  OutForDelivery = 450,
-  Delivered = 500
+  OrderSubmitted = 100, // Order has been submitted
+  Processing = 400, // Order is being processed
+  UpdatePending = 402, // Update is pending
+  OutForDelivery = 450, // Shipment is out for delivery
+  Delivered = 500 // Shipment has been delivered
 }
 
 enum ProofType {
-  Signature = 1,
-  DeliveryPhoto = 2
+  Signature = 1, // Proof of delivery by signature
+  DeliveryPhoto = 2 // Proof of delivery by photo
 }
 
 interface TrackingEvent {
-  tracking_event_status_id: TrackingEventStatusId
-  updated_at: string
-  description: string
-  timestamp: number
-  location?: string
+  tracking_event_status_id: TrackingEventStatusId // Status of the tracking event
+  updated_at: string // Date and time when the event was updated
+  description: string // Description of the event
+  timestamp: number // Timestamp of the event
+  location?: string // Location of the event (optional)
 }
 
 interface Proof {
-  url: string
-  type: ProofType
+  url: string // URL of the proof file
+  type: ProofType // Type of the proof
 }
 
 interface IShipment {
-  // 基本信息
-  tracking_number: string
-  carrier: string
-  service_type?: string // 服务类型（例如：标准递送、快速递送等）
+  // Basic information
+  tracking_number: string // Unique tracking number of the shipment
+  carrier: string // Carrier handling the shipment
+  service_type?: string // Type of service (e.g., standard delivery, expedited delivery, etc.)
 
-  // 状态信息
-  current_status: TrackingEventStatusId // 当前状态
-  estimated_delivery_date?: string // 预计送达日期
+  // Status information
+  current_status: TrackingEventStatusId // Current status of the shipment
+  estimated_delivery_date?: string // Estimated date of delivery
 
-  // 地址信息
+  // Address information
   origin?: {
-    postcode: string
-    city?: string
-    state?: string
-    country?: string
+    postcode: string // Postcode of the origin
+    city?: string // City of the origin (optional)
+    state?: string // State of the origin (optional)
+    country?: string // Country of the origin (optional)
   }
   destination: {
-    postcode: string
-    city?: string
-    state?: string
-    country?: string
+    postcode: string // Postcode of the destination
+    city?: string // City of the destination (optional)
+    state?: string // State of the destination (optional)
+    country?: string // Country of the destination (optional)
   }
 
-  // 时间信息
-  ship_date?: string // 发货日期
-  delivery_date?: string // 实际送达日期（如果已送达）
+  // Time information
+  ship_date?: string // Date when the shipment was shipped
+  delivery_date?: string // Actual date of delivery (if delivered)
 
-  // 跟踪事件
-  events: TrackingEvent[]
+  // Tracking events
+  events: TrackingEvent[] // List of tracking events
 
-  // 证明文件
-  proofs: Proof[]
+  // Proof files
+  proofs: Proof[] // List of proof files
 
-  // 包裹信息
-  package_count?: number // 包裹数量
+  // Package information
+  package_count?: number // Number of packages
   weight?: {
-    value: number
-    unit: 'kg' | 'lb'
+    value: number // Weight value
+    unit: 'kg' | 'lb' // Unit of weight (kilogram or pound)
   }
   dimensions?: {
-    length: number
-    width: number
-    height: number
-    unit: 'cm' | 'inch'
+    length: number // Length of the package
+    width: number // Width of the package
+    height: number // Height of the package
+    unit: 'cm' | 'inch' // Unit of dimension (centimeter or inch)
   }
 
-  // 附加信息
-  signature_required?: boolean
-  instructions?: string // 特殊指示
-  reference_number?: string // 客户参考号
+  // Additional information
+  signature_required?: boolean // Whether a signature is required for delivery
+  instructions?: string // Special instructions
+  reference_number?: string // Customer reference number
 
-  result: boolean
-  message: string
+  result: boolean // Result of the shipment process
+  message: string // Message related to the shipment process
 }
