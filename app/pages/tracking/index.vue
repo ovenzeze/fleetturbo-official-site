@@ -15,15 +15,17 @@
           to="http://www.17track.net/?utm_medium=logistics&utm_source=flletturbo"
           target="_blank"
         >
-          <div class="p-1 transition duration-300 ease-in-out flex flex-col items-center space-y-1 cursor-pointer">
+          <div class="p-1 flex flex-col items-center space-y-1 cursor-pointer">
             <div class="text-xs text-gray-600 mb-1 uppercase">
               also available on:
             </div>
-            <div class="w-20 flex justify-center items-center opacity-75">
+            <div class="w-20 flex justify-center items-center opacity-100">
+              <!-- 17track logo SVG -->
               <svg
                 viewBox="0 0 296 48"
                 xmlns="http://www.w3.org/2000/svg"
                 alt="17track logo"
+                class="w-full h-auto"
               >
                 <path
                   d="m11.92 12h-11.92l5.55-12h18.29v48h-11.92z"
@@ -192,7 +194,7 @@ onMounted(() => {
       description:
         'Invalid tracking number format. Please check your delivery details and try again.',
       icon: 'i-heroicons-exclamation-triangle',
-      color: 'red',
+      color: 'red'
     })
   } else if (isValidTrackingNumber.value) {
     fetchData()
