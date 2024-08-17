@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto cursor-pointer justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto cursor-pointer justify-center">
         <div
           v-for="(item, index) in features.items"
           :key="index"
