@@ -81,22 +81,25 @@ services:
 
 
 testimonials:
-  headline: What our customers say
-  title: Trusted by businesses partners
-  description: Hear from our satisfied customers about their experience with FleetTurbo.
+  headline: "What our customers say"
+  title: "Trusted by businesses partners"
+  description: "Hear from our satisfied customers about their experience with FleetTurbo."
   items:
-    - quote: I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions.
+    - quote: "I worked with Fleet Turbo since I started my own online business. They were extremely easy to work with and were always very responsive and available when I had any questions."
       author:
-        name: Online Business Owner
-        description: E-commerce Entrepreneur
-    - quote: My store is located in the neighbor street of Fleet Turbo in CA. They pick up the parcels daily from my store, they were very patient to get to know my business and my needs, and they were very open to discussion.
+        name: "Online Business Owner"
+        description: "E-commerce Entrepreneur"
+      category: "business" # 业务
+    - quote: "My store is located in the neighbor street of Fleet Turbo in CA. They pick up the parcels daily from my store, they were very patient to get to know my business and my needs, and they were very open to discussion."
       author:
-        name: Local Store Owner
-        description: Retail Business
-    - quote: We tasked Fleet Turbo to deliver our parcels to our customers. They are well organized, and even though we were on a tight schedule, needing rush delivery, they executed everything on time and on budget.
+        name: "Local Store Owner"
+        description: "Retail Business"
+      category: "technology" # 技术
+    - quote: "We tasked Fleet Turbo to deliver our parcels to our customers. They are well organized, and even though we were on a tight schedule, needing rush delivery, they executed everything on time and on budget."
       author:
-        name: Corporate Client
-        description: Large Enterprise
+        name: "Corporate Client"
+        description: "Large Enterprise"
+      category: "health" # 健康
 
 cta:
   title: Get started with FleetTurbo today

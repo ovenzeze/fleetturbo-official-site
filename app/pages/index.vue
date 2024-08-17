@@ -9,112 +9,85 @@ useSeoMeta({
   description: page.value.description,
   ogDescription: page.value.description
 })
+
+function getIconByCategory(category: string): string {
+  switch (category) {
+    case 'business':
+      return 'ph:briefcase-bold'
+    case 'technology':
+      return 'ph:device-mobile-bold'
+    case 'health':
+      return 'ph:heartbeat-bold'
+    case 'education':
+      return 'ph:book-open-bold'
+    default:
+      return 'ph:star-bold'
+  }
+}
+
+function getCategoryClass(category: string): string {
+  switch (category) {
+    case 'business':
+      return 'text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300'
+    case 'technology':
+      return 'text-green-600 dark:text-green-400 hover:text-green-500 dark:hover:text-green-300'
+    case 'health':
+      return 'text-red-600 dark:text-red-400 hover:text-red-500 dark:hover:text-red-300'
+    case 'education':
+      return 'text-yellow-600 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-yellow-300'
+    default:
+      return 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100'
+  }
+}
 </script>
 
 <template>
-  <div class="w-full mx-auto leading-relaxed dark:bg-gray-900 md:px-[6%] lg:px-[15%] ">
+  <div class="w-full mx-auto leading-relaxed dark:bg-gray-900 md:px-[6%] lg:px-[15%]">
     <LandingPage />
     <Features id="features" />
     <Services id="services" />
-    <ULandingSection
-      :title="page.testimonials.title"
-      :description="page.testimonials.description"
-    >
-      <UPageColumns
+     <!-- <Services2 id="services" /> -->
+    <section class="my-12">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200">{{ page.testimonials.title }}</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">{{ page.testimonials.description }}</p>
+      </div>
+      <div
         id="testimonials"
-        class="columns-1 md:columns-3 scroll-mt-[calc(var(--header-height)+140px+128px+96px)] content-center justify-center items-center dark:brightness-75"
+        class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-[calc(var(--header-height)+140px+128px+96px)] justify-center items-center dark:brightness-75"
       >
         <div
           v-for="(testimonial, index) in page.testimonials.items"
           :key="index"
-          class="break-inside-avoid"
+          class=" cursor-pointer break-inside-avoid w-full max-w-xs md:max-w-md p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400 mx-auto mb-4 md:mb-0"
         >
-          <ULandingTestimonial
-            v-bind="testimonial"
-            :ui="{ container: 'w-full' }"
-          />
+          <div class="flex items-center mb-2">
+            <div class="text-base font-semibold pl-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400">
+              {{ testimonial.author.name }}
+            </div>
+          </div>
+          <div class="text-sm  flex flex-row items-center mb-2 text-gray-600 dark:text-gray-300 transition-colors duration-300 hover:text-gray-800 dark:hover:text-gray-100">
+                        <!-- 图标显示在企业类型前面 -->
+                        <Icon
+              :name="getIconByCategory(testimonial.category)"
+              :class="['mr-1']"
+            />
+            {{ testimonial.author.description }}
+          </div>
+          <p class="text-sm leading-relaxed text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 dark:hover:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-green-400">
+            {{ testimonial.quote }}
+          </p>
         </div>
-      </UPageColumns>
-    </ULandingSection>
-
-    <div class="w-full sm:px-6 lg:px-8 mt-2 px-4 dark:brightness-50">
-      <div
-        class="relative isolate overflow-hidden px-30 py-20 text-center"
-      >
-        <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-400 sm:text-4xl">
-          {{ page.cta.title }}
-        </h2>
-
-        <h3 class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-500">
-          {{ page.cta.description }}
-        </h3>
-
-        <div class="mt-8 flex items-center justify-center gap-x-6">
-          <a
-            class="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            href="#"
-          >
-            Contact Us
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
-
-        <!-- gradient svg -->
-        <svg
-          viewBox="0 0 1024 1024"
-          class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[32rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
-          aria-hidden="true"
-        >
-          <circle
-            cx="512"
-            cy="512"
-            r="512"
-            fill="url(#827591b1-ce8c-4110-b064-7cb85a0b1217)"
-            fill-opacity="0.7"
-          />
-          <defs>
-            <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
-              <stop stop-color="#3b82f6" />
-              <stop
-                offset="1"
-                stop-color="#1d4ed8"
-              />
-            </radialGradient>
-          </defs>
-        </svg>
       </div>
-    </div>
-
-    <ULandingSection
-      id="faq"
-      :title="page.faq.title"
-      :description="page.faq.description"
-      class="scroll-mt-[var(--header-height)] dark:brightness-50"
-    >
-      <ULandingFAQ
-        multiple
-        :items="page.faq.items"
-        :ui="{
-          button: {
-            label: 'text-sm',
-            trailingIcon: {
-              base: 'w-6 h-6'
-            }
-          }
-        }"
-        class="max-w-4xl mx-auto"
-      />
-    </ULandingSection>
+    </section>
   </div>
 </template>
+
+<style scoped>
+.hover\:text-transparent:hover {
+  color: transparent;
+}
+.bg-clip-text {
+  background-clip: text;
+}
+</style>
