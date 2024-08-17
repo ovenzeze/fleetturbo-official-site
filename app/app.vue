@@ -27,5 +27,5 @@ useSeoMeta({
 
   <AppFooter />
 
-  <UNotifications />
+  <UNotifications ui="{ position: 'top-0 right-0', duration: 3000 }" />
 </template>
