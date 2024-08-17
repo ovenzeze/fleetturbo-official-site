@@ -30,14 +30,5 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
-
   compatibilityDate: '2024-07-11'
 })

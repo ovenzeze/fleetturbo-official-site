@@ -4,7 +4,18 @@
 
     <UDivider v-if="shipHistory.length" />
 
-    <div v-if="shipHistory.length" class="w-full">
+    <!-- 加载动画 -->
+    <div v-if="isFetching" class="w-full flex justify-center items-center py-12">
+      <UIcon name="i-heroicons-arrow-path" class="w-12 h-12 animate-spin text-primary" />
+    </div>
+
+    <!-- 初始状态提示 -->
+    <div v-else-if="!shipHistory.length && !isFetching && isInitialized" class="w-full flex flex-row items-center  justify-center pt-48 animate-pulse">
+      <UIcon name="i-heroicons-truck" class="w-5 h-5 text-gray-400 mr-2" />
+      <p class="text-sm text-gray-500 uppercase">Enter a tracking number to start</p>
+    </div>
+
+    <div v-else-if="shipHistory.length" class="w-full">
       <ShipmentInfo :info="shipmentInfo" class="mx-auto mb-6 mt-6 md:hidden" />
       <div class="w-full flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 justify-center md:justify-between items-start md:px-10">
         <div class="w-full md:w-4/6">
@@ -26,13 +37,13 @@ import ProofImages from './proofImages.vue'
 import TrackingTimeline from './timeline.vue'
 import { isValidTrackingNo } from '~~/utils/common'
 
-
 const toast = useToast()
 const route = useRoute()
 const trackingNumber = ref(route.query.s as string || '')
 const shipHistory = ref([])
 const deliveryProofs = ref([])
 const isFetching = ref(false)
+const isInitialized = ref(false)
 
 const shipmentInfo = computed(() => ({
   history: shipHistory.value,
@@ -49,13 +60,30 @@ const shipmentInfo = computed(() => ({
 }))
 
 async function fetchData() {
+  if (!isValidTrackingNo(trackingNumber.value)) {
+    toast.add({
+      title: 'Invalid Tracking Number',
+      description: 'Invalid tracking number format. Please check your delivery details and try again.',
+      icon: 'i-heroicons-exclamation-triangle',
+      color: 'red'
+    })
+    return
+  }
+
   isFetching.value = true
   try {
-    const { data = [], proofs = [] } = await $fetch(`https://api.fleetturbo.com/api/v1/tracking/${trackingNumber.value}`, { method: 'GET' })
+    const response = await $fetch(`https://api.fleetturbo.com/api/v1/tracking/${trackingNumber.value}`, { method: 'GET' })
+    const { data = [], proofs = [] } = response as { data: any[], proofs: any[] }
     shipHistory.value = data
     deliveryProofs.value = proofs
   } catch (error) {
     console.error('Error fetching data:', error)
+    toast.add({
+      title: 'Error',
+      description: 'Failed to fetch tracking information. Please try again.',
+      icon: 'i-heroicons-exclamation-circle',
+      color: 'red'
+    })
   } finally {
     isFetching.value = false
   }
@@ -63,22 +91,32 @@ async function fetchData() {
 
 function handleSearch(s: string) {
   trackingNumber.value = s
-  navigateTo({ query: { s } })
-  fetchData()
-}
-
-const valid  = computed(() => isValidTrackingNo(trackingNumber.value))
-
-onMounted(() => {
-  if (trackingNumber.value && !valid.value) {
+  if (isValidTrackingNo(s)) {
+    navigateTo({ query: { s } })
+    fetchData()
+  } else {
     toast.add({
       title: 'Invalid Tracking Number',
       description: 'Invalid tracking number format. Please check your delivery details and try again.',
       icon: 'i-heroicons-exclamation-triangle',
       color: 'red'
     })
-  } else if (valid.value) {
-    fetchData()
   }
+}
+
+onMounted(() => {
+  if (trackingNumber.value) {
+    if (isValidTrackingNo(trackingNumber.value)) {
+      fetchData()
+    } else {
+      toast.add({
+        title: 'Invalid Tracking Number',
+        description: 'Invalid tracking number format. Please check your delivery details and try again.',
+        icon: 'i-heroicons-exclamation-triangle',
+        color: 'red'
+      })
+    }
+  }
+  isInitialized.value = true
 })
 </script>

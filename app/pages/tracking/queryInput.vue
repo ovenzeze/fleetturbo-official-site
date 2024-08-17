@@ -39,7 +39,7 @@ async function openTracking() {
 </script>
 
 <template>
-  <div class="w-full flex flex-col flex-row md:space-x-4 justify-center">
+  <div class="w-full flex flex-col justify-center">
     <div class="flex-1 flex justify-center">
       <div class="w-full md:max-w-[490px] p-2 rounded-full bg-teal-500/10 flex flex-row justify-between items-center">
         <div class="min-w-0 shrink w-60">
@@ -63,17 +63,17 @@ async function openTracking() {
         </div>
       </div>
     </div>
-    <div class="mt-10 flex items-center justify-center cursor-pointer w-full">
+    <div class="mt-6 flex items-center justify-center w-full">
       <NuxtLink
         to="http://www.17track.net/?utm_medium=logistics&utm_source=flletturbo"
         target="_blank"
+        class="group transition-all duration-300 ease-in-out"
       >
-        <div class="p-1 flex flex-col items-center space-y-1 cursor-pointer">
-          <div class="text-sm text-gray-600 mb-3 uppercase font-semibold">
+        <div class="p-1 flex flex-col items-center space-y-1 cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300">
+          <div class="text-xs text-gray-500 mb-1 uppercase font-semibold group-hover:text-gray-700 transition-colors duration-300">
             also available on
           </div>
-          <div class="w-20 flex justify-center items-center opacity-100">
-            <!-- 17track logo SVG -->
+          <div class="w-16 flex justify-center items-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
             <svg
               viewBox="0 0 296 48"
               xmlns="http://www.w3.org/2000/svg"
@@ -110,12 +110,8 @@ async function openTracking() {
               </g>
             </svg>
           </div>
-          <div class="pt-1 h-6 font-bold text-xs text-center relative z-10 bg-gradient-to-r from-gray-300 via-stone-400 to-fuchsia-800 bg-clip-text text-transparent uppercase">
+          <div class="pt-1 h-4 font-bold text-[10px] text-center relative z-10 bg-gradient-to-r from-gray-400 via-stone-500 to-fuchsia-700 bg-clip-text text-transparent uppercase opacity-80 group-hover:opacity-100 group-hover:from-gray-300 group-hover:via-stone-400 group-hover:to-fuchsia-800 transition-all duration-300">
             Tracking Supported
-            <!-- <Icon
-              name="ph:arrow-square-out"
-              class="w-6 h-6 text-gray-600 hover:text-gray-800 transition-colors"
-            /> -->
           </div>
         </div>
       </NuxtLink>
