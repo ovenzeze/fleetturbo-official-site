@@ -1,66 +1,79 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div
-    v-if="proofs.length"
-    class="mt-8 w-full min-w-[370px] rounded-lg max-h-[300px] overflow-scroll dark:brightness-50"
-  >
-    <UCarousel
-      v-slot="{ item }"
-      arrows
-      :items="carouselList"
-      :ui="{
-        item: 'basis-full',
-        indicators: {
-          wrapper: 'relative bottom-0 mt-4'
-        }
-      }"
-    >
-      <img
-        :src="item"
-        class="w-[100%] h-[100%] object-contain rounded-lg cursor-pointer max-h-[300px]"
-        draggable="false"
-      >
-    </UCarousel>
-  </div>
-
-  <!-- Fullscreen Modal -->
-  <Teleport to="body">
+  <div>
     <div
-      v-if="fullscreenImage"
-      class="fixed inset-0 bg-black bg-opacity-90 z-[99] flex items-center justify-center"
+      v-if="proofs.length"
+      class="mt-6 md:mt-16 w-full min-w-[370px] rounded-lg max-h-[500px] overflow-hidden dark:brightness-50 mx-auto"
     >
-      <div class="relative w-full h-full flex items-center justify-center">
-        <img
-          :src="`https://api.fleetturbo.com${fullscreenImage.url}`"
-          :alt="`Fullscreen Proof`"
-          class="max-w-full max-h-full object-contain"
-        >
-        <div class="absolute top-4 right-4 flex space-x-2">
-          <UButton
-            color="gray"
-            variant="solid"
-            @click="downloadImage"
+      <UCarousel
+        :items="carouselList"
+        :ui="{
+      item: 'basis-full',
+      container: 'rounded-lg max-h-[400px] overflow-hidden',
+      indicators: {
+        wrapper: 'relative bottom-0 mt-4'
+      }
+    }"
+        indicators
+      >
+        <template #default="{ item, index }">
+          <img
+            :src="item"
+            class="w-full h-full object-contain rounded-lg cursor-pointer max-h-[270px]"
+            draggable="false"
+            @click="openFullscreen(index)"
           >
-            <UIcon
-              name="i-heroicons-arrow-down-tray"
-              class="w-5 h-5 mr-2"
-            />
-            Download
-          </UButton>
+        </template>
+        <template #indicator="{ onClick, page, active }">
           <UButton
-            color="gray"
-            variant="solid"
-            @click="closeFullscreen"
+            :label="String(page)"
+            :variant="active ? 'outline' : 'solid'"
+            size="2xs"
+            class="rounded-full min-w-6 justify-center bg-sky-900/10"
+            @click="onClick(page)"
+          />
+        </template>
+      </UCarousel>
+    </div>
+
+    <!-- Fullscreen Modal -->
+    <Teleport to="body">
+      <div
+        v-if="fullscreenImage"
+        class="fixed inset-0 bg-black bg-opacity-90 z-[99] flex items-center justify-center"
+      >
+        <div class="relative w-full h-full flex items-center justify-center">
+          <img
+            :src="`https://api.fleetturbo.com${fullscreenImage.url}`"
+            :alt="`Fullscreen Proof`"
+            class="max-w-full max-h-full object-contain"
           >
-            <UIcon
-              name="i-heroicons-x-mark"
-              class="w-5 h-5"
-            />
-          </UButton>
+          <div class="absolute top-4 right-4 flex space-x-2">
+            <UButton
+              color="gray"
+              variant="solid"
+              @click="downloadImage"
+            >
+              <UIcon
+                name="i-heroicons-arrow-down-tray"
+                class="w-5 h-5 mr-2"
+              />
+              Download
+            </UButton>
+            <UButton
+              color="gray"
+              variant="solid"
+              @click="closeFullscreen"
+            >
+              <UIcon
+                name="i-heroicons-x-mark"
+                class="w-5 h-5"
+              />
+            </UButton>
+          </div>
         </div>
       </div>
-    </div>
-  </Teleport>
+    </Teleport>
+  </div>
 </template>
 
 <script setup>
@@ -76,9 +89,10 @@ const carouselList = computed(() =>
   props.proofs.map(proof => `https://api.fleetturbo.com${proof.url}`)
 )
 
-// function openFullscreen(index) {
-//   fullscreenImage.value = props.proofs[index]
-// }
+// 打开全屏图片
+function openFullscreen(index) {
+  fullscreenImage.value = props.proofs[index]
+}
 
 function closeFullscreen() {
   fullscreenImage.value = null

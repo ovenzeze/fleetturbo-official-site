@@ -19,7 +19,6 @@ useSeoMeta({
 </script>
 
 <template>
-  <AppHeader />
 
   <UMain>
     <NuxtPage />
@@ -27,5 +26,5 @@ useSeoMeta({
 
   <AppFooter />
 
-  <UNotifications ui="{ position: 'top-0 right-0', duration: 3000 }" />
+  <UNotifications :ui="{ position: 'top-right', duration: 3000 }" />
 </template>

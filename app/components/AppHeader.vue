@@ -57,32 +57,5 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         class="md:ml-60 filter dark:brightness-200 brightness-25 "
       />
     </template>
-
-    <!-- <template #right>
-      <UButton
-        label="Sign in"
-        color="white"
-        variant="ghost"
-        trailing-icon="i-heroicons-arrow-right-20-solid"
-        class="hidden lg:flex"
-      />
-    </template> -->
-
-    <!-- <template #panel>
-      <UAsideLinks :links="links" />
-
-      <UDivider class="my-6" />
-
-      <UButton
-        label="Sign in"
-        color="white"
-        block
-        class="mb-3"
-      />
-      <UButton
-        label="Get started"
-        block
-      />
-    </template> -->
   </UHeader>
 </template>

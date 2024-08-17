@@ -2,7 +2,7 @@
 const { data: page } = await useAsyncData('index', () =>
   queryContent('/').findOne()
 )
-
+definePageMeta({ layout: 'public' })
 useSeoMeta({
   title: page.value.title,
   ogTitle: page.value.title,

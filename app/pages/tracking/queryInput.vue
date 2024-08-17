@@ -7,13 +7,12 @@ const emit = defineEmits(['search'])
 const loading = ref(false)
 const toast = useToast()
 const tracking_no = ref(props.initialTrackingNumber || '')
-const isValidTrackingNumber = computed(() => isValidTrackingNo(tracking_no.value))
+const isValid = computed(() => isValidTrackingNo(tracking_no.value))
 
 async function openTracking() {
-  if (!isValidTrackingNumber.value) {
+  if (!isValid.value) {
     toast.add({
-      title: 'Invalid Tracking Number',
-      description: 'Invalid tracking number format. Please check your delivery details and try again.',
+      title: 'Invalid Tracking No, Please Try Again',
       icon: 'i-heroicons-exclamation-triangle',
       color: 'red'
     })
@@ -29,6 +28,7 @@ async function openTracking() {
   if (isTrackingPage) {
     // 如果在tracking页面，直接触发搜索
     emit('search', tracking_no.value)
+
   } else {
     // 如果不在tracking页面，跳转到tracking页面
     await navigateTo(`/tracking?s=${tracking_no.value}`)
@@ -36,6 +36,20 @@ async function openTracking() {
 
   loading.value = false
 }
+onMounted(() => {
+  setTimeout(() => {
+    if (!tracking_no.value) return
+    if (!isValid.value) {
+    toast.add({
+      title: 'Invalid Tracking No, Please Try Again',
+      icon: 'i-heroicons-exclamation-triangle',
+      color: 'red'
+    })
+  } else {
+      emit('search', tracking_no.value)
+    }
+  }, 100)
+})
 </script>
 
 <template>

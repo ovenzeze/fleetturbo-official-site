@@ -10,10 +10,6 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
-  ui: {
-    icons: ['heroicons', 'ph']
-  },
-
   routeRules: {
     '/': { prerender: true }
   },

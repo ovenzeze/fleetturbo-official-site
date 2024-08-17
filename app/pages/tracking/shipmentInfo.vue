@@ -55,7 +55,7 @@
           style="color: rgb(17 24 39 / 0.3);"
           class="w-4 h-4 mr-1 bg-gradient-to-r from-gray-500 via-zinc-500 to-gray-50-800"
         />
-        <span class="text-xs text-gray-900/30 uppercase">Proundly Shiped By FleetTurbo</span>
+        <span class="text-xs text-gray-900/30 uppercase">Proundly Shipped By FleetTurbo</span>
       </div>
     </template>
   </UCard>
