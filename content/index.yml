@@ -13,42 +13,42 @@ hero:
       size: lg
 
 features:
-  headline: "Your trusted partner in last-mile delivery"
-  title: "More than just delivery - we're your last-mile solutions provider"
-  description: "Choose Fleet Turbo for fast, cost-effective delivery across the US. We offer tailored solutions for businesses of all sizes and industries."
+  headline: "Your Trusted Last-Mile Delivery Partner"
+  title: "Beyond Delivery: Your Comprehensive Last-Mile Solutions Provider"
+  description: "Experience fast, cost-effective delivery across the US with Fleet Turbo. We provide tailored solutions for businesses of all sizes and industries."
   items:
-    - title: "Low-cost pricing"
-      description: "Transparent, stable pricing without hidden costs, optimized for your budget"
+    - title: "Competitive Pricing"
+      description: "Transparent, stable rates without hidden fees, optimized for your budget"
       icon:
         name: "ph:piggy-bank-duotone"
         size: 24
         color: "#4CAF50"
-    - title: "Next-day local"
-      description: "Next-day local delivery and 2-5 day nationwide shipping to meet your timeline"
+    - title: "Speedy Local Delivery"
+      description: "Next-day local delivery and 2-5 day nationwide shipping to meet your deadlines"
       icon:
         name: "ph:truck-duotone"
         size: 24
         color: "#2196F3"
-    - title: "99.8% on-time"
-      description: "Exceptional reliability with a 99.8% on-time delivery rate, ensuring your customers' satisfaction"
+    - title: "99.8% On-Time Performance"
+      description: "Exceptional reliability with a 99.8% on-time delivery rate, ensuring customer satisfaction"
       icon:
         name: "ph:clock-countdown-duotone"
         size: 24
         color: "#FFC107"
-    - title: "3 delivery attempts"
-      description: "Three delivery attempts standard, maximizing successful deliveries"
+    - title: "Triple Delivery Attempts"
+      description: "Three delivery attempts as standard, maximizing successful deliveries"
       icon:
         name: "ph:repeat-duotone"
         size: 24
         color: "#9C27B0"
-    - title: "In-house support"
-      description: "Dedicated in-house customer service team for prompt, personalized assistance"
+    - title: "Dedicated Support Team"
+      description: "In-house customer service team providing prompt, personalized assistance"
       icon:
         name: "ph:headset-duotone"
         size: 24
         color: "#E91E63"
-    - title: "Easy integration"
-      description: "Seamless platform integration with expert technical support"
+    - title: "Seamless Integration"
+      description: "Easy platform integration with expert technical support"
       icon:
         name: "ph:plugs-connected-duotone"
         size: 24

@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
         <div
           v-for="(item, index) in features.items"
           :key="index"
@@ -26,7 +26,7 @@
               :style="{ backgroundColor: item.icon.color }"
               class="bg-gray-100 dark:bg-gray-700 p-2 rounded-full"
             />
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-300 ml-3">
+            <h4 class="text-base font-semibold text-gray-800 dark:text-gray-300 ml-2">
               {{ item.title }}
             </h4>
           </div>
