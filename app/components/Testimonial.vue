@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 
-defineProps<{
+const props = defineProps<{
   title: string;
   description: string;
   items: Array<{

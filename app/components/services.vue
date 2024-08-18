@@ -22,7 +22,7 @@
           <div class="glowing-border absolute inset-0 rounded-lg border border-transparent"></div>
           <img :src="service.image" :alt="service.title" class="w-full h-48 object-cover dark:brightness-50">
           <div class="p-6">
-            <div class="flex flex-row items-center mb-4 items-center justify-center">
+            <div class="flex flex-row items-center mb-4 justify-center">
               <Icon :name="getIconName(service.title)" class="service-icon text-base text-gray-900 dark:text-blue-400 transition-all duration-300" />
               <h3 class="service-title text-base font-medium text-gray-900 dark:text-gray-100 ml-2 transition-all duration-300">
                 {{ service.title }}
