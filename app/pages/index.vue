@@ -45,6 +45,9 @@ onMounted(() => {
       :items="page.testimonials.items"
       id="testimonials"
     />
+    <!-- 如果有任何图标，更新它们 -->
+    <i class="i-ph-star" /> <!-- 示例：星星图标 -->
+    <i class="i-ph-info" /> <!-- 示例：信息图标 -->
   </div>
 </template>
 

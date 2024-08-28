@@ -6,26 +6,26 @@ const links = computed(() => [
   {
     label: 'Features',
     to: '#features',
-    icon: 'i-heroicons-cube-transparent',
+    icon: 'i-ph-cube-transparent',
     active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('services'),
   },
   {
     label: 'Services',
     to: '#services',
-    icon: 'i-heroicons-credit-card',
+    icon: 'i-ph-credit-card',
     active:
       activeHeadings.value.includes('services') && !activeHeadings.value.includes('testimonials'),
   },
   {
     label: 'Testimonials',
     to: '#testimonials',
-    icon: 'i-heroicons-academic-cap',
+    icon: 'i-ph-graduation-cap',
     active: activeHeadings.value.includes('testimonials'),
   },
   {
     label: 'FAQ',
     to: '#faq',
-    icon: 'i-heroicons-question-mark-circle',
+    icon: 'i-ph-question',
     active: activeHeadings.value.includes('faq') && !activeHeadings.value.includes('testimonials'),
   },
 ])

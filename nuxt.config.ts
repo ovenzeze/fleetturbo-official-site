@@ -56,15 +56,4 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
-  nitro: {
-    storage: {
-      fs: {
-        driver: 'fs',
-        base: './.nuxt/cache',
-        options: {
-          maxLength: 255 // 限制文件名长度
-        }
-      }
-    }
-  },
 })
