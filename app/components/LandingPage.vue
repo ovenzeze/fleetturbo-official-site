@@ -136,7 +136,7 @@ onMounted(() => {
   position: relative;
   overflow: hidden; /* 确保光照效果不会溢出 */
 }
-
+@media (prefers-color-scheme: light) {
 #slogan::before {
   content: '';
   position: absolute;
@@ -151,6 +151,7 @@ onMounted(() => {
     transparent 100%
   );
   animation: light-sweep 8s linear infinite;
+}
 }
 
 #slogan span {

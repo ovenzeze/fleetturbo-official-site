@@ -25,7 +25,7 @@
           <div class="p-6">
             <div class="flex flex-row items-center mb-4 justify-center">
               <Icon :name="getIconName(service.title)" class="service-icon text-base text-gray-900 dark:text-blue-400 transition-all duration-300" />
-              <h3 class="service-title text-base font-medium text-gray-900 dark:text-gray-100 ml-2 transition-all duration-300">
+              <h3 class="service-title text-base font-medium text-gray-900 dark:text-gray-100 ml-2 transition-all duration-300  capitalize">
                 {{ service.title }}
               </h3>
             </div>

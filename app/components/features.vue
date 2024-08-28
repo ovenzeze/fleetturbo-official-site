@@ -1,6 +1,6 @@
 <template>
   <section class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
-    <div class="text-center mb-12" v-intersect="() => headerVisible = true" :class="{ 'animate-fade-in animate-duration-1000': headerVisible }">
+    <div class="text-center mb-12" :class="{ 'animate-fade-in animate-duration-1000': headerVisible }">
       <h2 class="text-sm md:text-base font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-widest uppercase">
         {{ features.headline }}
       </h2>
@@ -16,7 +16,6 @@
       <div
         v-for="(item, index) in features.items"
         :key="index"
-        v-intersect="() => item.visible = true"
         class="feature-card max-w-[380px] min-w-[350px] bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg hover:z-50 relative overflow-hidden mx-auto"
         :class="{ 'animate-fade-in animate-duration-1000': item.visible, [`animate-delay-${(index % 3 + 1) * 200}`]: item.visible }"
       >
