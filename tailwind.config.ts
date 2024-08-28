@@ -5,7 +5,8 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', ...defaultTheme.fontFamily.sans]
+        sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+        serif: ['Crimson Text', ...defaultTheme.fontFamily.serif]
       },
       keyframes: {
         typing: {

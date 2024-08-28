@@ -13,11 +13,11 @@
           {{ page.services.description }}
         </p>
       </div>
-      <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center">
+      <div class="grid gap-6 gap-y-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center">
         <div
           v-for="(service, index) in page.services.plans"
           :key="index"
-          class="service-card max-w-[370px] min-w-[350px] mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 relative"
+          class="service-card max-w-[370px] min-w-[350px] hover:shadow-lg  hover:z-50 mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 relative"
         >
           <div class="glowing-border absolute inset-0 rounded-lg border border-transparent"></div>
           <img :src="service.image" :alt="service.title" class="w-full h-48 object-cover dark:brightness-50">

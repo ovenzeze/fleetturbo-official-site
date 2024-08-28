@@ -27,20 +27,22 @@ function getCategoryClass(category: string): string {
 </script>
 
 <template>
-  <div class="w-full mx-auto leading-relaxed dark:bg-gray-900 md:px-[6%] lg:px-[15%]">
+  <div class="w-full mx-auto leading-relaxed max-w-screen-xl hidescrollbar">
+    <AppHeader />
     <LandingPage />
     <Features id="features" />
     <Services id="services" />
-    <!-- <Services2 id="services" /> -->
     <Testimonial
       :title="page.testimonials.title"
       :description="page.testimonials.description"
       :items="page.testimonials.items"
+      id="testimonials"
     />
   </div>
 </template>
 
 <style scoped>
+
 .hover\:text-transparent:hover {
   color: transparent;
 }

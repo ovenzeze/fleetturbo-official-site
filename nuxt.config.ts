@@ -7,8 +7,21 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    display: "swap",
+    download: true,
+    preload: true,
+    useStylesheet: true,
+    families: {
+      'Proxima Nova': [400, 700],
+      "Crimson Text": [400, 600, 700],
+      'Playfair Display': [400, 600, 700]
+    },
+  },
 
   routeRules: {
     '/': { prerender: true }

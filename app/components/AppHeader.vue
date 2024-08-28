@@ -29,7 +29,7 @@ const links = computed(() => [
     label: 'FAQ',
     to: '#faq',
     icon: 'i-heroicons-question-mark-circle',
-    active: activeHeadings.value.includes('faq')
+    active: activeHeadings.value.includes('faq') && !activeHeadings.value.includes('testimonials')
   }
 ])
 
@@ -54,7 +54,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         src="/images/logo-horizon-full-transparent.png"
         alt="Fleet Turbo"
         width="120"
-        class="md:ml-60 filter dark:brightness-200 brightness-25 "
+        class="md:ml-10 filter dark:brightness-200 brightness-25"
       />
     </template>
   </UHeader>
