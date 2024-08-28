@@ -24,29 +24,104 @@ function getCategoryClass(category: string): string {
       return 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100'
   }
 }
+
+const isLoaded = ref(false)
+
+onMounted(() => {
+  nextTick(() => {
+    isLoaded.value = true
+  })
+})
 </script>
 
 <template>
   <div class="w-full mx-auto leading-relaxed max-w-screen-xl hidescrollbar">
-    <AppHeader />
-    <LandingPage />
-    <Features id="features" />
-    <Services id="services" />
+    <AppHeader :class="{ 'animate-fade-in-down': isLoaded }" />
+    <LandingPage :class="{ 'animate-fade-in-up animate-delay-300': isLoaded }" />
+    <Features id="features" :class="{ 'animate-fade-in animate-delay-500': isLoaded }" />
+    <Services id="services" :class="{ 'animate-fade-in animate-delay-700': isLoaded }" />
     <Testimonial
       :title="page.testimonials.title"
       :description="page.testimonials.description"
       :items="page.testimonials.items"
       id="testimonials"
+      :class="{ 'animate-fade-in animate-delay-900': isLoaded }"
     />
   </div>
 </template>
 
 <style scoped>
-
 .hover\:text-transparent:hover {
   color: transparent;
 }
 .bg-clip-text {
   background-clip: text;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-900 {
+  animation-delay: 0.9s;
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-down,
+  .animate-fade-in-up,
+  .animate-fade-in {
+    animation: none;
+  }
 }
 </style>

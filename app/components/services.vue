@@ -1,7 +1,7 @@
 <template>
   <section class="py-12 px-4 sm:px-6 lg:px-6 mx-auto">
     <div class="max-w-full mx-auto">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 animate-fade-in animate-duration-1000">
         <h2 class="text-sm md:text-base text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase">
           <Icon name="ph:lightning-bold" class="inline-block mr-2"/> <!-- 添加PH图标 -->
           {{ page.services.headline }}
@@ -17,7 +17,8 @@
         <div
           v-for="(service, index) in page.services.plans"
           :key="index"
-          class="service-card max-w-[370px] min-w-[350px] hover:shadow-lg  hover:z-50 mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 relative"
+          class="service-card max-w-[370px] min-w-[350px] hover:shadow-lg hover:z-50 mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs overflow-hidden transition-transform duration-300 hover:transform hover:scale-105 relative animate-fade-in-left animate-duration-1000"
+          :class="`animate-delay-${(index + 1) * 200}`"
         >
           <div class="glowing-border absolute inset-0 rounded-lg border border-transparent"></div>
           <img :src="service.image" :alt="service.title" class="w-full h-48 object-cover dark:brightness-50">

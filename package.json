@@ -20,6 +20,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui-pro": "^1.4.1",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@tailwindcss/typography": "^0.5.14",
     "alpine": "^0.2.1"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "date-fns": "^3.6.0",
     "nuxt": "^3.12.4",
     "sass-embedded": "^1.77.8",
+    "tailwindcss-animate": "^1.0.7",
     "vue-tsc": "^2.0.29"
   },
   "packageManager": "pnpm@9.2.0+sha1.886364ebd6dae009284bebc56ed4296bb6dd557a"

@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+
 export default <Partial<Config>>{
   theme: {
     extend: {
@@ -31,5 +32,6 @@ export default <Partial<Config>>{
         typing: 'typing 5s steps(50) infinite alternate, blink .7s infinite'
       }
     }
-  }
+  },
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")]
 }

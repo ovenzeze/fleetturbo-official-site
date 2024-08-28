@@ -22,25 +22,22 @@ useSeoMeta({
   twitterTitle: 'FleetTurbo - Final Mile Delivery Solutions',
   twitterDescription: 'Fueled by Foresight, Turbocharged by Technology! Fast delivery across the US.'
 })
+
 </script>
 
 <template>
-
-<div class="dark:bg-gray-900 w-full hidescrollbar">
-  <NuxtLayout>
-    <UMain>
-      <NuxtPage />
-  </UMain>
-
-  <AppFooter />
-
-  <UNotifications :ui="{ position: 'top-right', duration: 3000 }" />
-  </NuxtLayout>
-</div>
+  <div class="dark:bg-gray-900 w-full hidescrollbar">
+    <NuxtLayout>
+      <UMain>
+        <NuxtPage />
+      </UMain>
+      <AppFooter />
+      <UNotifications :ui="{ position: 'top-right', duration: 3000 }" />
+    </NuxtLayout>
+  </div>
 </template>
 
 <style>
-
 :root {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
@@ -53,30 +50,37 @@ useSeoMeta({
   font-family: 'Crimson Text', 'Noto Sans SC', Inter, system-ui, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
-html, body::-webkit-scrollbar-track {
-  border-radius: 9999px;
-  background-color: #f3f4f6;
-}
-
-html,body::-webkit-scrollbar-thumb {
-  border-radius: 9999px;
-  background-color: #f3f4f6;
-}
-.noscrollbar::-webkit-scrollbar {
-  width: 0.125rem;
-  height: 0.125rem;
-}
-.hidescrollbar::-webkit-scrollbar {
-  width: 0rem;
-  height: 0rem;
-}
+html, body::-webkit-scrollbar-track,
 .noscrollbar::-webkit-scrollbar-track {
   border-radius: 9999px;
   background-color: #f3f4f6;
 }
 
+html, body::-webkit-scrollbar-thumb,
 .noscrollbar::-webkit-scrollbar-thumb {
   border-radius: 9999px;
   background-color: #f3f4f6;
+}
+
+.noscrollbar::-webkit-scrollbar {
+  width: 0.125rem;
+  height: 0.125rem;
+}
+
+.hidescrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 }
 </style>

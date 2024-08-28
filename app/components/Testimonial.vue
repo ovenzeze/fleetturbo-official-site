@@ -1,6 +1,6 @@
 <template>
   <section class="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 animate-fade-in animate-duration-1000">
       <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 uppercase mb-4">{{ title }}</h2>
       <p class="text-lg text-gray-600 dark:text-gray-400">{{ description }}</p>
     </div>
@@ -11,7 +11,8 @@
       <div
         v-for="(testimonial, index) in items"
         :key="index"
-        class="cursor-pointer break-inside-avoid w-full max-w-xs md:max-w-md p-6  dark:bg-gray-800 border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400 mx-auto mb-4 md:mb-0 group"
+        class="cursor-pointer break-inside-avoid w-full max-w-xs md:max-w-md p-6 dark:bg-gray-800 border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400 mx-auto mb-4 md:mb-0 group animate-fade-in animate-duration-1000 animate-float"
+        :class="`animate-delay-${(index % 3 + 1) * 200}`"
       >
         <div class="flex flex-col items-center mb-6">
           <div class="font-semibold text-base text-gray-800 dark:text-gray-200 text-center flex items-center">
@@ -31,11 +32,11 @@
           />
         </blockquote>
         <footer class="mt-4 w-full">
-          <div class="w-full text-sm text-gray-400 dark:text-gray-400 text-center flex flex-row  justify-center items-center">
+          <div class="w-full text-sm text-gray-400 dark:text-gray-400 text-center flex flex-row justify-center items-center">
             <Icon
               :name="getIconByCategory(testimonial.category)"
               :style="{ color: 'rgb(156 163 175)' }"
-              class="w-4 h-4 text-gray-600 dark:text-gray-300  mr-1 transition-transform duration-300 group-hover:rotate-12"
+              class="w-4 h-4 text-gray-600 dark:text-gray-300 mr-1 transition-transform duration-300 group-hover:rotate-12"
             />
             {{ testimonial.author.description }}
           </div>
@@ -75,3 +76,14 @@ function getIconByCategory(category: string): string {
   }
 }
 </script>
+
+<style scoped>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+</style>
