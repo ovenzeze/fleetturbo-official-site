@@ -11,7 +11,7 @@
       <div
         v-for="(testimonial, index) in items"
         :key="index"
-        class="cursor-pointer break-inside-avoid w-full max-w-xs md:max-w-md p-6 dark:bg-gray-800 border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400 mx-auto mb-4 md:mb-0 group animate-fade-in animate-duration-1000 animate-float"
+        class="cursor-pointer break-inside-avoid w-full max-w-xs md:max-w-md p-6  border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:border-blue-500 dark:hover:border-blue-400 mx-auto mb-4 md:mb-0 group animate-fade-in animate-duration-1000 animate-float"
         :class="`animate-delay-${(index % 3 + 1) * 200}`"
       >
         <div class="flex flex-col items-center mb-6">

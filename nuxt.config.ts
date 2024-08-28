@@ -12,6 +12,24 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  typescript: {
+    strict: false,
+    builder: 'vite',
+    typeCheck: false, 
+    tsConfig: {
+      "compilerOptions": {
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "module": "ESNext",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true
+      },
+    },
+  },
   googleFonts: {
     display: "swap",
     download: true,
@@ -32,13 +50,21 @@ export default defineNuxtConfig({
     enabled: false
   },
 
-  typescript: {
-    strict: false
-  },
-
   future: {
     compatibilityVersion: 4
   },
 
-  compatibilityDate: '2024-07-11'
+  compatibilityDate: '2024-07-11',
+
+  nitro: {
+    storage: {
+      fs: {
+        driver: 'fs',
+        base: './.nuxt/cache',
+        options: {
+          maxLength: 255 // 限制文件名长度
+        }
+      }
+    }
+  },
 })

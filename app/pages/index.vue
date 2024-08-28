@@ -1,13 +1,12 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () =>
-  queryContent('/').findOne()
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne()
 )
-definePageMeta({ layout: 'public' })
+
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
 })
 
 function getCategoryClass(category: string): string {
@@ -36,16 +35,15 @@ onMounted(() => {
 
 <template>
   <div class="w-full mx-auto leading-relaxed max-w-screen-xl hidescrollbar">
-    <AppHeader :class="{ 'animate-fade-in-down': isLoaded }" />
-    <LandingPage :class="{ 'animate-fade-in-up animate-delay-300': isLoaded }" />
-    <Features id="features" :class="{ 'animate-fade-in animate-delay-500': isLoaded }" />
-    <Services id="services" :class="{ 'animate-fade-in animate-delay-700': isLoaded }" />
+    <AppHeader  />
+    <Landing :class="{ 'animate-fade-in-up animate-delay-300': isLoaded }" />
+    <Features id="features" />
+    <Services id="services" />
     <Testimonial
       :title="page.testimonials.title"
       :description="page.testimonials.description"
       :items="page.testimonials.items"
       id="testimonials"
-      :class="{ 'animate-fade-in animate-delay-900': isLoaded }"
     />
   </div>
 </template>

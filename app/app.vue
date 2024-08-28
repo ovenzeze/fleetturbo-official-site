@@ -32,7 +32,7 @@ useSeoMeta({
         <NuxtPage />
       </UMain>
       <AppFooter />
-      <UNotifications :ui="{ position: 'top-right', duration: 3000 }" />
+      <UNotifications :ui="{ position: 'top-center', duration: 3000 }" />
     </NuxtLayout>
   </div>
 </template>

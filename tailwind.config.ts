@@ -1,13 +1,28 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
-
 export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
-        serif: ['Crimson Text', ...defaultTheme.fontFamily.serif]
+        sans: ['Proxima Nova', 'sans-serif'],
+        serif: ['Crimson Text', 'serif']
+      },
+      colors: {
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        text: {
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        },
+        border: 'rgb(var(--color-border) / <alpha-value>)',
+        error: 'rgb(var(--color-error) / <alpha-value>)',
+        warning: 'rgb(var(--color-warning) / <alpha-value>)',
+        success: 'rgb(var(--color-success) / <alpha-value>)',
+        info: 'rgb(var(--color-info) / <alpha-value>)',
       },
       keyframes: {
         typing: {
@@ -33,5 +48,6 @@ export default <Partial<Config>>{
       }
     }
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")]
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  darkMode: 'class'
 }

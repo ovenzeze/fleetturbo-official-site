@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 161 161 170;    /* zinc-400 */
+    --color-secondary: 113 113 122;  /* zinc-500 */
+    --color-accent: 245 158 11;      /* amber-500 */
+    --color-background: 255 255 255; /* white */
+    --color-surface: 250 250 250;    /* zinc-50 */
+    --color-text-primary: 24 24 27;  /* zinc-900 */
+    --color-text-secondary: 82 82 91;/* zinc-600 */
+    --color-border: 228 228 231;     /* zinc-200 */
+    --color-error: 239 68 68;        /* red-500 */
+    --color-warning: 245 158 11;     /* amber-500 */
+    --color-success: 16 185 129;     /* emerald-500 */
+    --color-info: 59 130 246;        /* blue-500 */
+  }
+
+  .dark {
+    --color-primary: 255 255 255;    /* white */
+    --color-secondary: 212 212 216;  /* zinc-300 */
+    --color-accent: 251 191 36;      /* amber-400 */
+    --color-background: 24 24 27;    /* zinc-900 */
+    --color-surface: 39 39 42;       /* zinc-800 */
+    --color-text-primary: 244 244 245; /* zinc-100 */
+    --color-text-secondary: 228 228 231; /* zinc-200 */
+    --color-border: 63 63 70;        /* zinc-700 */
+    --color-error: 248 113 113;      /* red-400 */
+    --color-warning: 251 191 36;     /* amber-400 */
+    --color-success: 52 211 153;     /* emerald-400 */
+    --color-info: 96 165 250;        /* blue-400 */
+  }
+}

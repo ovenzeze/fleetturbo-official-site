@@ -13,23 +13,22 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/heroicons": "^1.1.24",
     "@nuxt/content": "^2.13.2",
     "@nuxt/fonts": "^0.7.2",
     "@nuxt/icon": "^1.4.5",
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui-pro": "^1.4.1",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@tailwindcss/typography": "^0.5.14",
+    "@tailwindcss/typography": "^0.5.15",
     "alpine": "^0.2.1"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.68",
     "@iconify-json/ph": "^1.1.14",
+    "@types/node": "^22.5.1",
     "date-fns": "^3.6.0",
-    "nuxt": "^3.12.4",
-    "sass-embedded": "^1.77.8",
+    "nuxt": "^3.13.0",
     "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.5.4",
     "vue-tsc": "^2.0.29"
   },
   "packageManager": "pnpm@9.2.0+sha1.886364ebd6dae009284bebc56ed4296bb6dd557a"
