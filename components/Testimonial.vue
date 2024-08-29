@@ -1,7 +1,7 @@
 <template>
   <section class="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="text-center mb-12 animate-fade-in animate-duration-1000">
-      <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 uppercase mb-4">{{ title }}</h2>
+      <h1 class="font-semibold capitalize mb-4 text-2xl md:text-3xl lg:text-4xl">{{ title }}</h1>
       <p class="text-lg text-gray-600 dark:text-gray-400">{{ description }}</p>
     </div>
     <div

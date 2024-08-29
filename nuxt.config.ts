@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
 
+  pages: true,
+
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
@@ -42,10 +44,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/': { prerender: true }
-  },
-
   devtools: {
     enabled: false
   },
@@ -54,6 +52,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  compatibilityDate: '2024-07-11',
 
+  compatibilityDate: '2024-07-11',
 })

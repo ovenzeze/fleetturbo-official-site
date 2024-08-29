@@ -1,27 +1,29 @@
 <template>
-  <UContainer class="w-full min-h-screen flex flex-col space-y-4 justify-start items-center pt-5 md:px-0 max-w-[1000px] pb-10">
-    <NuxtImg
-        src="/images/logo-horizon-full-transparent.png"
-        alt="Fleet Turbo"
-        width="120"
-        class="filter dark:brightness-200 brightness-25 mb-6"
+  <div class="w-full min-h-screen flex flex-col space-y-4 justify-start items-center md:px-0 pt-48">
+    <QueryInput 
+        :initialTrackingNumber="urlTrackingNo" 
+        @search="handleSearch" 
+        :class="[
+          'w-full max-w-lg transition-all duration-500 ease-in-out',
+          shipHistory.length || isFetching ? 'animate-slide-up' : ''
+        ]" 
       />
-    <QueryInput :initialTrackingNumber="urlTrackingNo" @search="handleSearch" />
+    <div :class="{' w-full flex flex-col justify-start items-center max-h-[300px] mt-12': !shipHistory.length && !isFetching}">
+      <div v-if="!shipHistory.length && !isFetching" class="text-center mb-8 animate-fade-in">
+        <HowItWorks :howItWorks="services.howItWorks" class="max-h-[300px] min-w-[100vw]" source="tracking"/>
+      </div>
+
+
+    </div>
 
     <UDivider v-if="shipHistory.length" />
 
     <!-- 加载动画 -->
     <div v-if="isFetching" class="w-full flex justify-center items-center py-12">
-      <UIcon name="i-heroicons-arrow-path" class="w-12 h-12 animate-spin text-primary" />
+      <UIcon name="ph:circle-notch" class="w-12 h-12 animate-spin text-primary" />
     </div>
 
-    <!-- 初始状态提示 -->
-    <div v-else-if="!shipHistory.length && !isFetching && isInitialized" class="w-full flex flex-row items-center  justify-center pt-48 animate-pulse">
-      <UIcon name="i-heroicons-truck" class="w-5 h-5 text-gray-400 mr-2" />
-      <p class="text-sm text-gray-500 uppercase">Enter a tracking number to start</p>
-    </div>
-
-    <div v-else-if="shipHistory.length" class="w-full">
+    <div v-if="shipHistory.length" class="w-full animate-fade-in">
       <ShipmentInfo :info="shipmentInfo" class="mx-auto mb-6 mt-6 md:hidden" />
       <div class="w-full flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 justify-center md:justify-between items-start md:px-10">
         <div class="w-full md:w-4/6">
@@ -33,7 +35,7 @@
         </div>
       </div>
     </div>
-  </UContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -42,6 +44,8 @@ import ShipmentInfo from './shipmentInfo.vue'
 import ProofImages from './proofImages.vue'
 import TrackingTimeline from './timeline.vue'
 import { isValidTrackingNo } from '~~/utils/common'
+import HowItWorks from '../services/HowItWorks.vue'
+import { usePageWording } from '../../composables/pageWording';
 
 const toast = useToast()
 const route = useRoute()
@@ -49,7 +53,6 @@ const urlTrackingNo = ref(route.query.s as string || '')
 const shipHistory = ref([])
 const deliveryProofs = ref([])
 const isFetching = ref(false)
-const isInitialized = ref(false)
 
 const shipmentInfo = computed(() => ({
   history: shipHistory.value,
@@ -64,6 +67,8 @@ const shipmentInfo = computed(() => ({
   senderName: null,
   eta: null
 }))
+
+const { services } = usePageWording();
 
 async function fetchData(trackingNo: string) {
 
@@ -93,3 +98,18 @@ const handleSearch = (s: string) => {
 }
 
 </script>
+
+<style scoped>
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20vh);
+  }
+}
+</style>

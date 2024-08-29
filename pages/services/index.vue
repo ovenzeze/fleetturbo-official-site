@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePageWording } from '../../../composables/pageWording';
+import { usePageWording } from '../../composables/pageWording';
 import ServiceBanner from './serviceBanner.vue';
 import ServiceList from './ServiceList.vue';
 import PackageHandling from './PackageHandling.vue';
@@ -12,14 +12,13 @@ const { services } = usePageWording();
 </script>
 
 <template>
-  <div class="container mx-auto px-4 py-4 background text-primary">
-    <AppHeader />
+  <div class="container mx-auto px-4 py-4 background text-primary pt-16">
     <ServiceBanner :banner="services.banner" />
     <ServiceList :services="services.ourServices" />
     <PackageHandling :parcelDimensions="services.parcelDimensions" />
     <PlatformIntegration :integrations="services.effortlessAPIIntegrations" />
     <MerchantFeatures :merchant="services.merchantCenterBackend" />
-    <HowItWorks :howItWorks="services.howItWorks" />
+    <HowItWorks :howItWorks="services.howItWorks" source="services" />
     <!-- <PackageTracking :tracking="services.packageTracking" /> -->
   </div>
 </template>

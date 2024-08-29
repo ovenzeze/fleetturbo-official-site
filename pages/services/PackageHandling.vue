@@ -18,10 +18,10 @@ defineProps<{
   <section class="mb-16">
         <div class="text-center mb-24">
       <!-- <UBadge color="primary" class="mb-4"> <Icon name="ph:rocket-launch" class="w-4 h-4 inline-block mr-1" /></UBadge> -->
-      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-10 text-primary">
+      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-10 text-text-primary">
         {{ parcelDimensions.title }}
       </h1>
-      <p class="text-base md:text-lg text-secondary max-w-3xl mx-auto">
+      <p class="text-base md:text-lg max-w-3xl mx-auto gradient-text">
         {{ parcelDimensions.description }}
       </p>
     </div>
@@ -35,16 +35,16 @@ defineProps<{
             <span class="text-xs font-semibold uppercase text-secondary">{{ size.name }} Package</span>
           </div>
           <div class="text-center">
-            <UIcon :name="`i-ph-package${size.name === 'Medium' ? '-light' : size.name === 'Large' || size.name === 'Extra Large' ? '-bold' : ''}`" class="h-16 w-16 mx-auto text-primary" />
+            <Icon :name="`i-ph-package${size.name === 'Medium' ? '-light' : size.name === 'Large' || size.name === 'Extra Large' ? '-bold' : ''}`" class="h-16 w-16 mx-auto text-primary" />
           </div>
           <dl class="flex flex-col items-center divide-y divide-primary/20 pt-6">
             <dt class="pb-6 w-full text-center">
                 <span class="block text-sm font-semibold text-secondary/50">Dimensions</span>
-                <span class="block text-sm text-primary">{{ size.dimensions }}</span>
+                <span class="block text-sm text-secondary">{{ size.dimensions }}</span>
             </dt>
             <dd class="pt-6 w-full text-center">
               <span class="block text-sm font-semibold text-secondary/50">Weight</span>
-              <span class="block text-sm text-primary">{{ size.weight }}</span>
+              <span class="block text-sm text-secondary">{{ size.weight }}</span>
             </dd>
           </dl>
         </div>

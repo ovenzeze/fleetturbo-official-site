@@ -13,6 +13,11 @@ const props = defineProps<{
       description: string;
     }>;
   };
+  source: {
+    type: String,
+    default: 'services',
+    required: false
+  }
 }>();
 
 const activeStep = ref(0);
@@ -22,6 +27,7 @@ const containerRef = ref<HTMLElement | null>(null);
 const cardWidth = 320; // Width of each card in pixels
 const cardSpacing = 40; // Spacing between cards
 const visibleCards = ref(3); // Number of cards visible at once, will be updated based on container width
+const isTracking = ref(props.source === 'tracking');
 
 const slidePosition = computed(() => {
   const totalWidth = props.howItWorks.steps.length * (cardWidth + cardSpacing) - cardSpacing;
@@ -109,12 +115,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="py-16 bg-gray-50 dark:bg-gray-900 prose">
-    <div class="text-center mb-16">
-      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white animate-fade-in-down">
+  <section class="py-16 prose max-w-screen-xl">
+    <UBadge color="cyan" class="mb-4 mx-auto max-w-32 flex flex-row  items-center justify-center uppercase" v-if="!isTracking">
+      <Icon name="ph:anchor-simple-duotone" class="w-4 h-4 inline-block mr-1" />How It Works</UBadge>
+    <div class="text-center mb-16" v-if="!isTracking">
+      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 text-text-primary animate-fade-in-down">
         {{ howItWorks.title }}
       </h1>
-      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-wrap content-center capitalize animate-fade-in-up">
+      <p class="text-lg md:text-xl text-text-secondary/50 max-w-3xl mx-auto text-wrap content-center capitalize animate-fade-in-up">
         {{ howItWorks.description }}
       </p>
     </div>
@@ -131,7 +139,7 @@ onBeforeUnmount(() => {
                ]"
                :style="{ animationDelay: `${index * 150}ms` }"
                :data-step="index">
-            <div class="flex flex-col items-center bg-white/20 dark:bg-gray-800/10 rounded-lg p-6 h-full">
+            <div class="flex flex-col items-center bg-surface dark:bg-surface/50 rounded-lg p-6 h-full">
               <div class="flex items-center justify-center w-28 h-28 rounded-full transition-all duration-500 ease-in-out mb-2"
                    :class="activeStep === index ? 'bg-gradient-to-r from-fuchsia-600 via-sky-800 to-cyan-900 text-white' : ' dark:bg-gray-700/10 text-red-500/20 dark:text-gray-400 brightness-50'">
                 <Icon :name="step.mainIcon" class="w-16 h-16" />
@@ -156,7 +164,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
       
-      <div class="flex justify-center mt-8 space-x-4">
+      <div class="flex justify-center mt-8 space-x-4" v-if="!isTracking">
         <button v-for="(step, index) in howItWorks.steps" :key="index"
                 @click="setActiveStep(index)"
                 class="w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out relative overflow-hidden group"
@@ -173,15 +181,15 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <div class="text-center mt-24">
+      <div class="text-center mt-32 mb-20" v-if="!isTracking">
         <UButton 
-          color="primary"
+          color="gray"
           variant="solid"
           size="lg"
-          class="font-bold px-6 py-5"
+          class="font-bold px-6 py-5 rounded-full"
         >
-          Get Started with FleetTurbo
-          <Icon name="heroicons:arrow-right" class="w-5 h-5 ml-1" />
+          <Icon name="ph:circles-three-plus-bold" class="w-5 h-6 bg-gradient-fire" />
+          <span class="ml-0 text-gradient bg-gradient-fire text-lg">Get Started with FleetTurbo</span>
         </UButton>
       </div>
     </div>
