@@ -24,10 +24,10 @@ const props = defineProps<{
       </p>
     </div>
     <div class="container mx-auto px-4">
-    
+
       <div class="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-        <div v-for="(feature, index) in merchant.features" :key="index" 
-             class=" flex flex-col  pt-6 justify-between  rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-zoom-in-out bg-surface/80 opacity-90">
+        <div v-for="(feature, index) in merchant.features" :key="index"
+             class=" flex flex-col  pt-6 justify-between  rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-zoom-in-out bg-surface/80 opacity-90 max-w-[340px]">
           <div class="p-6 flex flex-col justify-between h-full">
             <div class="flex items-center justify-center w-16 h-16 bg-gradient-forest  rounded-full mb-6 mx-auto">
               <Icon :name="feature.icon" class=" w-8 h-8 text-text-primary/50" />
@@ -42,9 +42,9 @@ const props = defineProps<{
           <div class="bg-gradient-to-br from-primary via-secondary to-accent h-2 mt-10 "></div>
         </div>
       </div>
-      
+
       <!-- <div class="text-center mt-12">
-        <UButton 
+        <UButton
           color="primary"
           variant="solid"
           size="lg"

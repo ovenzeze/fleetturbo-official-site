@@ -19,11 +19,11 @@ const links = [
 </script>
 
 <template>
-  <UFooter class="background prose max-w-screen-xl">
+  <UFooter class="background max-w-screen-xl">
     <template #top>
       <footer class="py-2 ">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
             <div
               v-for="(module, index) in links"
               :key="index"
@@ -32,7 +32,7 @@ const links = [
               <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2 text-center md:text-left">
                 {{ module.title }}
               </h3>
-              <p class="text-sm text-text-secondary/80 text-center md:text-left line-clamp-3 leading-relaxed content-center h-20 text-wrap whitespace-pre-line">
+              <p class="text-sm text-text-secondary/80 text-center md:text-left line-clamp-3 leading-relaxed content-center max-h-12 text-wrap whitespace-pre-line">
                 {{ module.description }}
               </p>
             </div>

@@ -1,38 +1,45 @@
 <script setup lang="ts">
-const props = defineProps<{
+
+
+const props = defineProps({
   banner: {
-    title: string;
-    subtitle: string;
-    button: {
-      text: string;
-      icon?: string;
-    };
-  };
-}>();
+    type: Object,
+    required: true
+  },
+  isVisible: {
+    type: Boolean,
+    default: false
+  }
+})
+const banner = computed(() => props.banner)
+const isVisible = computed(() => props.isVisible)
 </script>
 
 <template>
-  <section class="mb-16 animate-fade-in-down animate-delay-300 mt-10">
-    <div class="relative overflow-hidden rounded-lg bg-gradient-to-r p-8 md:p-16">
-      <div class="absolute inset-0 bg-cover bg-center opacity-30 fliter bg-blend-color-dodge" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=cover&w=1350&q=80');"></div>
-      <div class="relative z-10 max-w-4xl mx-auto">
-        <h1 class="text-xl md:text-6xl font-bold text-center mb-4 md:mb-6 text-gradient bg-gradient-fire dark:bg-gradient-forest ">{{ banner.title }}</h1>
-        <p class="text-xl md:text-2xl text-center mb-6 md:mb-10  text-text-secondary/80">{{ banner.subtitle }}</p>
-        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-
-                  <UButton 
-          color="gray"
-          variant="solid"
-          size="lg"
-          class="font-bold px-6 py-5 rounded-full"
-        >
-          <Icon name="ph:phone-call-bold" class="w-5 h-6 bg-gradient-fire" />
-          <span class="ml-0 text-gradient bg-gradient-fire text-lg">{{ banner.button.text }}</span>
-        </UButton>
+  <div class="service-banner"
+       :class="{ 'opacity-0 translate-y-10': !isVisible, 'opacity-100 translate-y-0': isVisible }"
+       style="transition: all 0.7s ease-out;">
+    <section class="mb-16 animate-fade-in-down animate-delay-300 mt-10">
+      <div class="relative overflow-hidden rounded-lg bg-gradient-to-r p-8 md:p-16">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30 fliter bg-blend-color-dodge" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=cover&w=1350&q=80');"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <h1 class="text-xl md:text-6xl font-bold text-center mb-4 md:mb-6 text-gradient bg-gradient-fire dark:bg-gradient-forest ">{{ banner.title }}</h1>
+          <p class="text-xl md:text-2xl text-center mb-6 md:mb-10  text-text-secondary/80">{{ banner.subtitle }}</p>
+          <div class="flex flex-col justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 ">
+            <UButton
+              color="gray"
+              variant="solid"
+              size="lg"
+              class="font-bold px-4 py-3 md:py-5 rounded-full"
+            >
+              <Icon name="ph:phone-call-bold" class="w-5 h-6 bg-gradient-fire" />
+              <span class=" text-gradient bg-gradient-fire text-base md:text-lg">{{ banner.button.text }}</span>
+            </UButton>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style scoped>
