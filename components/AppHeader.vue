@@ -61,6 +61,7 @@ const toggleMenu = () => {
               <NuxtImg
                 src="/images/logo-horizon-full-transparent.png"
                 alt="Fleet Turbo"
+                width="120"
                 height="30"
                 class="filter dark:opacity-50 brightness-150 dark:invert scale-75 overflow-hidden"
               />
