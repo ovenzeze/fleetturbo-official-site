@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="scroll-smooth">
     <HeroSection />
     <PricingSection />
     <BenefitsSection />
@@ -11,7 +11,7 @@
       :description="page.testimonials.description"
       :items="page.testimonials.items"
       id="testimonials"
-      class="min-h-screen w-fullflex flex-colitems-center justify-center content-center"
+      class="min-h-screen  flex-colitems-center justify-center content-center"
     />
     <CTASection />
   </div>

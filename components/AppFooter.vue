@@ -19,7 +19,7 @@ const links = [
 </script>
 
 <template>
-  <UFooter class="background max-w-screen-xl">
+  <UFooter class="background w-full mt-20">
     <template #top>
       <footer class="py-2 ">
         <div class="container mx-auto px-4">

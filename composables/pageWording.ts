@@ -1,8 +1,8 @@
 export const usePageWording = () => {
   const services = {
     "banner": {
-      "title": "FleetTurbo Delivery Solutions",
-      "subtitle": "Order Placed, Next-Day Delivered!",
+      "subtitle": "FleetTurbo Delivery Solutions",
+      "title": "Order Placed, Next-Day Delivered!",
       "button": {
         "text": "Contact our Expert Solutions",
         "icon": "",

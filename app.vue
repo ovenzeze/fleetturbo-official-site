@@ -26,9 +26,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-background">
+  <div class="min-h-screen bg-background w-full content-center">
     <AppHeader />
-    <NuxtPage class="md:pt-20"/>
+    <NuxtPage />
     <AppFooter />
   </div>
   <UNotifications />

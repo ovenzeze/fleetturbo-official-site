@@ -1,16 +1,16 @@
 <template>
-  <div class="w-full min-h-screen flex flex-col space-y-4 justify-start items-center md:px-0 pt-48">
-    <QueryInput 
-        :initialTrackingNumber="urlTrackingNo" 
-        @search="handleSearch" 
+  <div class="w-full min-h-screen flex flex-col space-y-10 justify-start items-center md:px-0 pt-24 md:pt-20">
+    <QueryInput
+        :initialTrackingNumber="urlTrackingNo"
+        @search="handleSearch"
         :class="[
-          'w-full max-w-lg transition-all duration-500 ease-in-out',
+          'w-full max-w-lg transition-all duration-500 ease-in-out mt-12 px-6',
           shipHistory.length || isFetching ? 'animate-slide-up' : ''
-        ]" 
+        ]"
       />
-    <div :class="{' w-full flex flex-col justify-start items-center max-h-[300px] mt-12': !shipHistory.length && !isFetching}">
+    <div :class="{' w-full flex flex-col justify-start items-center h-[600px]': !shipHistory.length && !isFetching}">
       <div v-if="!shipHistory.length && !isFetching" class="text-center mb-8 animate-fade-in">
-        <HowItWorks :howItWorks="services.howItWorks" class="max-h-[300px] min-w-[100vw]" source="tracking"/>
+        <HowItWorks :howItWorks="services.howItWorks" class="h-[600px] md:w-full px-[10vw] opacity-25" source="tracking"/>
       </div>
 
 

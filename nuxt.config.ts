@@ -14,10 +14,16 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  colorMode: {
+    preference: 'dark',
+    classSuffix: '',
+    storageKey: 'color-mode',
+    defaultTheme: 'dark',
+  },
   typescript: {
     strict: false,
     builder: 'vite',
-    typeCheck: false, 
+    typeCheck: false,
     tsConfig: {
       "compilerOptions": {
         "skipLibCheck": true,

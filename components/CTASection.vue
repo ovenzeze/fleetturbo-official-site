@@ -1,9 +1,9 @@
 <!-- CTASection.vue -->
 <template>
-  <section class="cta-section min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-500 to-primary-700 text-white transition-colors duration-300 overflow-hidden">
+  <section class="cta-section min-h-screen flex items-center justify-center  text-white transition-colors duration-300 overflow-hidden bg-gradient-sunset">
     <div class="container mx-auto px-4 py-12 relative">
       <!-- Background decorative elements -->
-      <div class="absolute inset-0 overflow-hidden opacity-10">
+      <div class="absolute inset-0 overflow-hidden opacity-20 w-[100vw] h-[70vh]">
         <div v-for="i in 5" :key="i"
              class="absolute bg-white rounded-full"
              :style="{
@@ -11,20 +11,21 @@
                height: `${Math.random() * 300 + 50}px`,
                top: `${Math.random() * 100}%`,
                left: `${Math.random() * 100}%`,
-               animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`
+               animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`,
+               animationDelay: `${Math.random() * 2}s`
              }"
         ></div>
       </div>
 
       <div class="relative z-10">
         <h2
-          class="text-4xl md:text-6xl font-bold text-center mb-6 transform transition-all duration-700 ease-out"
+          class="text-4xl md:text-6xl font-bold text-center mb-6 transform transition-all duration-700 ease-out delay-100 text-gradient bg-gradient-forest leading-snug tracking-wide"
           :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-10 opacity-0': !isVisible }"
         >
-          Ready to Revolutionize Your Logistics?
+          Ready to <br /> Revolutionize Your Logistics?
         </h2>
         <p
-          class="text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto transform transition-all duration-700 ease-out delay-100"
+          class="text-xl md:text-xl text-center mb-20 max-w-3xl mx-auto transform transition-all duration-700 ease-out delay-100 leading-relaxed tracking-wide text-gradient bg-gradient-zinc"
           :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-10 opacity-0': !isVisible }"
         >
           Join thousands of businesses that have transformed their shipping process with FleetTurbo. Start your journey towards efficient, cost-effective logistics today.
@@ -53,7 +54,7 @@
           </UButton>
         </div>
 
-        <div
+        <!-- <div
           class="mt-16 text-center transform transition-all duration-700 ease-out delay-300"
           :class="{ 'translate-y-0 opacity-100': isVisible, 'translate-y-10 opacity-0': !isVisible }"
         >
@@ -61,7 +62,7 @@
           <div class="flex flex-wrap justify-center items-center gap-8">
             <img v-for="(logo, index) in trustLogos" :key="index" :src="logo" :alt="`Trusted company ${index + 1}`" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity duration-300">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
