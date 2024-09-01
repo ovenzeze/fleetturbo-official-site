@@ -52,18 +52,17 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <header class="animate-fade-in-down animate-duration-1000 animate-delay-300 fixed top-4 left-0 w-full z-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-0">
+  <header class="animate-fade-in-down animate-duration-1000 animate-delay-300 fixed top-8 left-1/2 -translate-x-1/2 z-50 w-auto min-w-[90vw] md:max-w-6xl md:min-w-[60vw] md:min-w-[768px]">
+    <div class="mx-auto px-4 sm:px-0">
       <div class="bg-surface dark:bg-surface/25 backdrop-blur-md rounded-full shadow-l px-6 py-1 border border-opacity-50 border-border" :class="isMenuOpen ? 'rounded-b-none' : ''">
         <div class="flex flex-row justify-between items-center transition-all duration-300 ease-in" :class="isMenuOpen ? 'px-3 py-1' : 'px-3 py-1'">
-          <div class="flex-shrink-0">
+          <div class="mr-10">
             <NuxtLink to="/">
               <NuxtImg
                 src="/images/logo-horizon-full-transparent.png"
                 alt="Fleet Turbo"
                 height="30"
-                width="120"
-                class="filter dark:opacity-50 brightness-100 dark:invert scale-75"
+                class="filter dark:opacity-50 brightness-150 dark:invert scale-75 overflow-hidden"
               />
             </NuxtLink>
           </div>
@@ -74,13 +73,13 @@ const toggleMenu = () => {
                   :to="link.to"
                   :class="[
                     link.active
-                      ? 'background text-text-primary shadow-lg flex-shrink-0'
+                      ? 'background text-text-primary shadow-lg'
                       : 'text-text-secondary/50',
                     'px-2 py-1 rounded-full text-sm font-medium transition-colors duration-300 flex flex-row items-center justify-center'
                   ]"
                 >
                   <Icon :name="link.icon" class="mr-1 w-4 h-4" />
-                  {{ link.label }}
+                  <span class="line-clamp-1 truncate">{{ link.label }}</span>
                 </NuxtLink>
               </li>
             </ul>
