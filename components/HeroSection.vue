@@ -10,16 +10,16 @@
     />
     <div class="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
       <h1
-        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-loose transform translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300 text-white"
+        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-loose transform translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300 text-gradient bg-gradient-to-r from-blue-400 via-blue-200 to-fuchsia-400 bg-clip-text text-transparent"
         :class="{ 'translate-y-0 opacity-100': contentVisible }"
       >
         Why Choose FleetTurbo
       </h1>
       <p
-        class="text-xl md:text-2xl lg:text-3xl mb-20 max-w-3xl mx-auto leading-relaxed transform translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300"
+        class="text-xl md:text-xl mb-20 max-w-3xl mx-auto leading-relaxed transform translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300 text-gradient bg-gradient-to-r from-blue-300 via-blue-100 to-fuchsia-300 bg-clip-text text-transparent"
         :class="{ 'translate-y-0 opacity-100': contentVisible }"
       >
-        Your Reliable Partner in Logistics - Delivering Efficiency, Speed, and Savings Across the Globe
+        Your Reliable Partner in Logistics <br /> Delivering Efficiency, Speed, and Savings Across the Globe
       </p>
       <div
         class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 transform scale-95 opacity-0 transition-all duration-1000 ease-out delay-600"

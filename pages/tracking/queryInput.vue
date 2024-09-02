@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full flex flex-col justify-center">
+  <div class="w-full flex flex-row justify-center items-center">
     <div class="flex-1 flex justify-center">
       <div class="w-full md:max-w-[490px] p-2 rounded-full bg-teal-500/10 flex flex-row justify-between items-center">
         <div class="min-w-0 shrink w-60">
@@ -82,17 +82,17 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="mt-6 flex items-center justify-center w-full">
+    <div class="flex items-center justify-center w-[150px]">
       <NuxtLink
         to="http://www.17track.net/?utm_medium=logistics&utm_source=flletturbo"
         target="_blank"
         class="group transition-all duration-300 ease-in-out"
       >
-        <div class="p-1 flex flex-col items-center space-y-1 cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-xs text-gray-500 mb-1 uppercase font-semibold group-hover:text-gray-700 transition-colors duration-300">
+        <div class="p-1 flex flex-col items-center space-y-1 cursor-pointer opacity-100 hover:opacity-100 transition-opacity duration-300">
+          <div class="text-xs text-gray-500 mb-2 uppercase font-semibold group-hover:text-gray-700 transition-colors duration-300">
             also available on
           </div>
-          <div class="w-16 flex justify-center items-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="w-16 flex justify-center items-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
             <svg
               viewBox="0 0 296 48"
               xmlns="http://www.w3.org/2000/svg"

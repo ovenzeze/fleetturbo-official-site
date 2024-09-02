@@ -27,7 +27,7 @@
               {{ page.hero.description }}
             </p>
 
-            <QueryInput />
+            <QueryInput class="mt-10 max-w-2xl"/>
             <!-- <p class="mt-3 text-slate-500">
                 Get notified when we launch!
               </p> -->

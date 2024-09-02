@@ -61,8 +61,10 @@ const updateProgress = () => {
 };
 
 onMounted(() => {
-  startAutoSwitch();
-  updateProgress();
+  if (!isTracking.value) {
+    startAutoSwitch();
+    updateProgress();
+  }
 });
 
 onBeforeUnmount(() => {
@@ -81,7 +83,7 @@ watch(visibleCards, () => {
       class="mb-4 mx-auto max-w-32 flex flex-row items-center justify-center uppercase">
       <Icon name="ph:anchor-simple-duotone" class="w-4 h-4 inline-block mr-1" />How It Works
     </UBadge>
-    <div v-if="!isTracking" class="text-center mb-16">
+    <div class="text-center mb-16">
       <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 text-text-primary animate-fade-in-down">
         {{ howItWorks.title }}
       </h1>

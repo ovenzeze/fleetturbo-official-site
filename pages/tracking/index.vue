@@ -4,17 +4,15 @@
         :initialTrackingNumber="urlTrackingNo"
         @search="handleSearch"
         :class="[
-          'w-full max-w-lg transition-all duration-500 ease-in-out mt-12 px-6',
+          'w-full max-w-3xl transition-all duration-500 ease-in-out mt-12 px-6 mt-[10vh]',
           shipHistory.length || isFetching ? 'animate-slide-up' : ''
         ]"
       />
-    <div :class="{' w-full flex flex-col justify-start items-center h-[600px]': !shipHistory.length && !isFetching}">
+    <!-- <div :class="{' w-full flex flex-col justify-start items-center h-[600px]': !shipHistory.length && !isFetching}">
       <div v-if="!shipHistory.length && !isFetching" class="text-center mb-8 animate-fade-in">
         <HowItWorks :howItWorks="services.howItWorks" class="h-[600px] md:w-full px-[10vw] opacity-25" source="tracking"/>
       </div>
-
-
-    </div>
+    </div> -->
 
     <UDivider v-if="shipHistory.length" />
 
