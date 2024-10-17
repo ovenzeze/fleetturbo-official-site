@@ -2,7 +2,7 @@
 const links = [
   {
     title: 'Address',
-    description: '1619 S 9TH ST,\nALHAMBRA CA 91803'
+    description: '1619 S 9TH ST, ALHAMBRA' + '\n' + 'CA 91803, USA'
   },
   {
     title: 'Customer Service',
@@ -15,83 +15,68 @@ const links = [
   {
     title: 'Be a part of our team',
     description: 'recruitement@fleetturbo.com'
-  }]
+  }
+]
+
+const legalLinks = [
+  { title: 'Privacy Policy', href: '/privacy' },
+  { title: 'Terms of Service', href: '/terms' }
+]
 </script>
 
 <template>
-  <UFooter class="background w-full mt-20">
+  <UFooter class="dark:bg-gray-900">
     <template #top>
-      <footer class="py-2 ">
+      <footer class="py-2">
         <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 ">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
             <div
               v-for="(module, index) in links"
               :key="index"
               class="rounded-lg px-1 transition-all duration-300"
             >
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2 text-center md:text-left">
+              <h3 class="text-xs font-semibold text-gray-900 dark:text-gray-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-2 text-center md:text-left">
                 {{ module.title }}
               </h3>
-              <p class="text-sm text-text-secondary/80 text-center md:text-left line-clamp-3 leading-relaxed content-center max-h-12 text-wrap whitespace-pre-line">
+              <p class="text-xs text-gray-600 dark:text-gray-500 text-center md:text-left line-clamp-2">
                 {{ module.description }}
               </p>
             </div>
           </div>
         </div>
       </footer>
-
-      <!-- <UFooterColumns :links="links"> -->
-      <!-- <template #right>
-          <form @submit.prevent="onSubmit">
-            <UFormGroup
-              label="Subscribe to our newsletter"
-              :ui="{ container: 'mt-3' }"
-            >
-              <UInput
-                v-model="email"
-                type="email"
-                placeholder="Enter your email"
-                :ui="{ icon: { trailing: { pointer: '' } } }"
-                required
-                size="xl"
-                autocomplete="off"
-                class="max-w-sm"
-              >
-                <template #trailing>
-                  <UButton
-                    type="submit"
-                    size="xs"
-                    :label="loading ? 'Subscribing' : 'Subscribe'"
-                    :loading="loading"
-                  />
-                </template>
-              </UInput>
-            </UFormGroup>
-          </form>
-        </template> -->
-      <!-- </UFooterColumns> -->
     </template>
 
     <template #center>
-      <div style="padding: 2px; font-size: 12px; color: #666666; text-align: center;" class="prose">
-        <p style="text-transform: uppercase; text-align: center; margin: 0 auto; max-width: 100%;">
+      <div class="text-center text-xs text-gray-600 dark:text-gray-400">
+        <p class="uppercase mb-2">
           Copyright © FleetTurbo {{ new Date().getFullYear() }}. A LuLuGo Tech Company.<br>
           All rights reserved.
         </p>
+        <div class="flex justify-center space-x-4 mt-2">
+          <NuxtLink
+            v-for="link in legalLinks"
+            :key="link.title"
+            :to="link.href"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+          >
+            {{ link.title }}
+          </NuxtLink>
+        </div>
       </div>
     </template>
 
     <template #right>
-      <UColorModeButton size="sm" class="text-text-secondary/80 z-10" />
-
-      <!-- <UButton
-        to="https://github.com/nuxt-ui-pro/landing"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="GitHub"
-        color="gray"
-        variant="ghost"
-      /> -->
+      <UColorModeButton size="sm" />
     </template>
   </UFooter>
 </template>
+
+<style scoped>
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+</style>
