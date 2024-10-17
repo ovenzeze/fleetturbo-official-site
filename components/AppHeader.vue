@@ -56,18 +56,14 @@ const toggleMenu = () => {
   <header class=" animate-delay-300 fixed top-8 left-1/2 -translate-x-1/2 z-50 w-auto min-w-[90vw] md:max-w-6xl md:min-w-[768px]">
     <div class="mx-auto px-4 sm:px-0">
       <div class="bg-surface dark:bg-surface/25 backdrop-blur-md rounded-full shadow-l px-6 py-1 border border-opacity-50 border-border" :class="isMenuOpen ? 'rounded-b-none' : ''">
-        <div class="flex flex-row justify-between items-center transition-all duration-300 ease-in" :class="isMenuOpen ? 'px-3 py-1' : 'px-3 py-1'">
-          <div class="mr-10">
+        <div class="flex flex-row justify-between items-center transition-all duration-300 ease-in" :class="isMenuOpen ? 'px-6 py-1' : 'px-2 py-1'">
             <NuxtLink to="/">
               <NuxtImg
                 src="/images/logo-horizon-full-transparent.png"
                 alt="Fleet Turbo"
-                width="120"
-                height="30"
-                class="filter dark:opacity-50 brightness-150 dark:invert scale-75 overflow-hidden"
+                class="filter dark:opacity-50 brightness-150 dark:invert md:scale-75 overflow-hidden w-16 md:w-[120px]"
               />
             </NuxtLink>
-          </div>
           <nav class="hidden md:block">
             <ul class="flex items-center justify-center space-x-3 leading-relaxed transition-all duration-300 ease-in-out">
               <li v-for="link in links" :key="link.to">
