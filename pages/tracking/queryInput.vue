@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full flex flex-row justify-center items-center">
+  <div class="w-full flex flex-col md:flex-row justify-center items-center gap-y-4">
     <div class="flex-1 flex justify-center">
       <div class="w-full md:max-w-[490px] p-2 rounded-full bg-teal-500/10 flex flex-row justify-between items-center">
         <div class="min-w-0 shrink w-60">

@@ -11,7 +11,7 @@ const links = computed(() => [
     label: 'Home',
     to: '/',
     icon: 'ph:house',
-    active: curPath.value === '/',
+    active: curPath.value === '/' && route.hash === '',
   },
   {
     label: 'Features',
@@ -19,24 +19,25 @@ const links = computed(() => [
     icon: 'ph:cube-transparent',
     active: curPath.value === '/' && route.hash === '#features',
   },
-  // {
-  //   label: 'Testimonials',
-  //   to: '/#testimonials',
-  //   icon: 'ph:graduation-cap',
-  //   active: curPath.value === '/' && route.hash === '#testimonials',
-  // },
+  {
+    label: 'Testimonials',
+    to: '/#testimonials',
+    icon: 'ph:graduation-cap',
+    active: curPath.value === '/' && route.hash === '#testimonials',
+  },
   {
     label: 'Services',
-    to: '/services',
+    to: '#services',
     icon: 'ph:credit-card',
-    active: curPath.value === '/services',
+    // active: curPath.value === '/services',
+    active: curPath.value === '/' && route.hash === '#services',
   },
-  {
-    label: 'Why FleetTurbo',
-    to: '/why-fleetturbo',
-    icon: 'ph:question',
-    active: curPath.value === '/why-fleetturbo',
-  },
+  // {
+  //   label: 'Why FleetTurbo',
+  //   to: '/why-fleetturbo',
+  //   icon: 'ph:question',
+  //   active: curPath.value === '/why-fleetturbo',
+  // },
   {
     label: 'Tracking',
     to: '/tracking',
@@ -52,7 +53,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <header class="animate-fade-in-down animate-duration-1000 animate-delay-300 fixed top-8 left-1/2 -translate-x-1/2 z-50 w-auto min-w-[90vw] md:max-w-6xl md:min-w-[60vw] md:min-w-[768px]">
+  <header class=" animate-delay-300 fixed top-8 left-1/2 -translate-x-1/2 z-50 w-auto min-w-[90vw] md:max-w-6xl md:min-w-[768px]">
     <div class="mx-auto px-4 sm:px-0">
       <div class="bg-surface dark:bg-surface/25 backdrop-blur-md rounded-full shadow-l px-6 py-1 border border-opacity-50 border-border" :class="isMenuOpen ? 'rounded-b-none' : ''">
         <div class="flex flex-row justify-between items-center transition-all duration-300 ease-in" :class="isMenuOpen ? 'px-3 py-1' : 'px-3 py-1'">
@@ -95,35 +96,55 @@ const toggleMenu = () => {
         </div>
       </div>
     </div>
-    <transition
+    <!-- <transition
       enter-active-class="transition ease-out duration-300"
       enter-from-class="opacity-0 -translate-y-1"
       enter-to-class="opacity-100 translate-y-0"
       leave-active-class="transition ease-in duration-200"
       leave-from-class="opacity-100 translate-y-0"
       leave-to-class="opacity-0 -translate-y-1"
+    > -->
+    <div
+    v-if="isMenuOpen"
+    class="md:hidden max-w-3xl mx-auto px-4 sm:px-6"
+  >
+    <nav
+      class="bg-surface/25 dark:bg-surface/25 rounded-b-lg shadow-md backdrop-blur-sm transition-all duration-300 ease-out"
+      :class="[
+        isMenuOpen ? 'animate-in fade-in slide-in-from-top-4' : 'animate-out fade-out slide-out-to-top-4'
+      ]"
     >
-      <div v-if="isMenuOpen" class="md:hidden max-w-3xl mx-auto px-4 sm:px-6">
-        <nav class="bg-surface dark:bg-surface/25 rounded-b-lg shadow-md backdrop-blur-md transition-all duration-300 ease-in-out">
-          <ul class="px-2 pt-2 pb-3 space-y-3 pl-14 md:pl-0" :class="isMenuOpen ? 'pl-14' : 'pl-3'">
-            <li v-for="link in links" :key="link.to">
-              <NuxtLink
-                :to="link.to"
-                :class="[
-                  link.active
-                    ? 'text-text-primary'
-                    : 'text-text-secondary hover:bg-secondary/10',
-                  'px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 flex items-center underline underline-offset-4 decoration-text-secondary/50 decoration-2'
-                ]"
-                @click="toggleMenu"
-              >
-                <Icon :name="link.icon" class="mr-2 w-4 h-4" />
-                {{ link.label }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </transition>
+      <ul
+        class="px-2 pt-2 pb-3 space-y-3 pl-14 md:pl-0 transition-all duration-300 ease-out"
+        :class="[
+          isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+        ]"
+      >
+        <li
+          v-for="link in links"
+          :key="link.to"
+          class="transition-all duration-300 ease-out"
+          :class="[
+            isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+          ]"
+        >
+          <NuxtLink
+            :to="link.to"
+            :class="[
+              link.active
+                ? 'text-text-primary'
+                : 'text-text-secondary hover:bg-secondary/10',
+              'px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 flex items-center underline underline-offset-4 decoration-text-secondary/50 decoration-2'
+            ]"
+            @click="toggleMenu"
+          >
+            <Icon :name="link.icon" class="mr-2 w-4 h-4" />
+            {{ link.label }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <!-- </transition> -->
   </header>
 </template>

@@ -94,7 +94,7 @@ watch(visibleCards, () => {
     </div>
 
     <div class="relative overflow-hidden">
-      <div class="flex transition-transform duration-[2000ms] ease-in-out mx-auto"
+      <div class="flex transition-transform duration-1000 ease-in-out mx-auto"
         :style="{ transform: `translateX(${(visibleCards.value / 2 - activeStep - 0.5) * 100}%)` }">
         <div v-for="(step, index) in howItWorks.steps" :key="index"
           class="flex-shrink-0 px-4 transition-all duration-500 max-w-[340px]"
