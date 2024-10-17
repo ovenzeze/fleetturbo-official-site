@@ -1,8 +1,8 @@
 export const usePageWording = () => {
   const services = {
     "banner": {
+      "subtitle": "FleetTurbo Delivery Solutions",
       "title": "Order Placed, Next-Day Delivered!",
-      "subtitle": "FleetTurbo Final Mile Delivery Solution",
       "button": {
         "text": "Contact our Expert Solutions",
         "icon": "",
@@ -10,7 +10,7 @@ export const usePageWording = () => {
       }
     },
     "ourServices": {
-      "title": "EXPERT IN LOGISTICS ACROSS USA",
+      "title": "Expert In Logistics Across US",
       "description": "Fleet Turbo provides fast, flexible, and affordable delivery that gives businesses a competitive edge. With delivery times ranging from 2 to 5 days, we offer the perfect balance between speed and cost, catering to a variety of shipping needs.",
       "coverageAreas": ["LAX", "SAN", "LAS", "CHI", "everywhere in the United States"],
       "visualElement": "",
@@ -20,7 +20,7 @@ export const usePageWording = () => {
       }
     },
     "parcelDimensions": {
-      "title": "Package Handling",
+      "title": "Package Handling Policy",
       "description": "We handle packages from 1 oz to 70 lbs and guarantee same-day pickup and delivery.",
       "visualElement": "",
       "additionalInfo": {
@@ -108,9 +108,9 @@ export const usePageWording = () => {
             "title": "Delivery",
             "mainIcon": "ph:map-pin-bold",
             "subIcons": [
-              { "icon": "ph:clock-countdown-bold", "label": "Fast" },
-              { "icon": "ph:map-trifold-bold", "label": "Tracked" },
-              { "icon": "ph:check-circle-bold", "label": "Confirmed" }
+              { "icon": "ph:clock-countdown", "label": "Fast" },
+              { "icon": "ph:map-trifold", "label": "Tracked" },
+              { "icon": "ph:check-circle", "label": "Confirmed" }
             ],
             "description": "Efficient and trackable delivery"
           }

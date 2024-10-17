@@ -34,8 +34,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full mx-auto leading-relaxed max-w-screen-xl hidescrollbar">
-    <AppHeader  />
+  <div class="w-full mx-auto leading-relaxed max-w-screen-xl hidescrollbar pt-20">
     <Landing :class="{ 'animate-fade-in-up animate-delay-300': isLoaded }" />
     <Features id="features" />
     <Services id="services" />

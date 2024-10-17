@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+  <section class="py-16 px-4 ">
     <div class="text-center mb-12" :class="{ 'animate-fade-in animate-duration-1000': headerVisible }">
       <h2 class="text-sm md:text-base font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-widest uppercase">
         {{ features.headline }}

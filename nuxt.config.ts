@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
 
+  pages: true,
+
   modules: [
     '@nuxt/content',
     '@nuxt/fonts',
@@ -12,10 +14,16 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  colorMode: {
+    preference: 'dark',
+    classSuffix: '',
+    storageKey: 'color-mode',
+    defaultTheme: 'dark',
+  },
   typescript: {
     strict: false,
     builder: 'vite',
-    typeCheck: false, 
+    typeCheck: false,
     tsConfig: {
       "compilerOptions": {
         "skipLibCheck": true,
@@ -42,10 +50,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/': { prerender: true }
-  },
-
   devtools: {
     enabled: false
   },
@@ -54,6 +58,6 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  compatibilityDate: '2024-07-11',
 
+  compatibilityDate: '2024-07-11',
 })

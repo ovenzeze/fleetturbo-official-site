@@ -2,17 +2,17 @@
 import { ref } from '#imports'
 
 const integrations = ref({
-  title: "Seamless.AI integrates with all of your favorite sales tools",
+  title: "Seamless Sales Integrations",
   description: "One-click native integrations with Salesforce, HubSpot, Salesloft, Outreach, Pipedrive, Dynamics, and more. Plus over 6,000+ Apps, CRMs, & automation tools with Zapier.",
   supportedPlatforms: [
-    { name: "Pipedrive", icon: "pipe", color: "var(--color-primary)" },
-    { name: "Salesforce", icon: "cloud", color: "var(--color-primary)" },
-    { name: "HubSpot", icon: "circles-three-plus", color: "var(--color-primary)" },
-    { name: "Dynamics365", icon: "microsoft-outlook-logo", color: "var(--color-primary)" },
-    { name: "Zapier", icon: "puzzle-piece", color: "var(--color-primary)" },
-    { name: "Slack", icon: "slack-logo", color: "var(--color-primary)" },
-    { name: "LinkedIn", icon: "linkedin-logo", color: "var(--color-primary)" },
-    { name: "Gmail", icon: "google-logo", color: "var(--color-primary)" }
+    { name: "Pipedrive", icon: "pipe", color: "#1a7b84" },
+    { name: "Salesforce", icon: "cloud", color: "#00a1e0" },
+    { name: "HubSpot", icon: "circles-three-plus", color: "#ff7a59" },
+    { name: "Dynamics365", icon: "microsoft-outlook-logo", color: "#0078d4" },
+    { name: "Zapier", icon: "puzzle-piece", color: "#ff4a00" },
+    { name: "Slack", icon: "slack-logo", color: "#4a154b" },
+    { name: "LinkedIn", icon: "linkedin-logo", color: "#0a66c2" },
+    { name: "Gmail", icon: "google-logo", color: "#ea4335" }
   ]
 })
 
@@ -20,13 +20,13 @@ const isHovered = ref(false)
 </script>
 
 <template>
-  <section class="container mx-auto px-4 py-16">
-    <div class="text-center mb-32">
-      <UBadge color="primary" class="mb-4"> <Icon name="ph:rocket-launch" class="w-4 h-4 inline-block mr-1" /> INTEGRATIONS</UBadge>
-      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-10 text-primary dark:text-secondary">
+  <section class="container mx-auto px-4 py-10">
+    <div class="text-center mb-20">
+      <UBadge color="rose" class="mb-4"> <Icon name="ph:rocket-launch" class="w-4 h-4 inline-block mr-1" /> INTEGRATIONS</UBadge>
+      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-10 text-text-primary">
         {{ integrations.title }}
       </h1>
-      <p class="text-base md:text-lg text-text-secondary max-w-3xl mx-auto">
+      <p class="text-base md:text-lg text-text-secondary/50 max-w-3xl mx-auto">
         {{ integrations.description }}
       </p>
     </div>
@@ -34,13 +34,13 @@ const isHovered = ref(false)
     <div class="relative integration-container" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
       <!-- Central logo -->
       <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-        <div class="bg-gray-100 dark:bg-gray-800 rounded-full p-4">
+        <div class=" rounded-full p-4">
           <img src="/images/logo-icon-only-transparent.png" alt="Seamless.AI Logo" class="w-10 h-10 md:w-16 md:h-16" />
         </div>
       </div>
 
       <!-- Integration icons -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-20 md:mb-60">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-20 md:mb-96">
         <div v-for="(platform, index) in integrations.supportedPlatforms.slice(0, 4)" :key="`top-${index}`" 
              class="flex flex-col items-center transform transition-all duration-300 hover:scale-110 integration-item">
           <Icon :name="`ph:${platform.icon}`" 
